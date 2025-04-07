@@ -1,45 +1,47 @@
-<section class="bg-gray-100 w-full flex items-center px-5 h-screen">
+<section class="h-screen flex items-center w-full justify-center">
 
-  <!-- Contenedor -->
-  <div class="w-md bg-white border border-gray-200 shadow-lg rounded-2xl py-14 px-7 md:px-10 flex flex-col mx-auto space-y-10">
+  <div class="flex flex-col items-center space-y-10 bg-white">
+
+    <!-- <lucide-icon [name]="ShoppingBag" class="size-14 text-primary" /> -->
+
+    <img src="/img/logo.png" alt="Logo Ecommerce" class="w-32 h-32" />
 
     <div class="text-center space-y-2">
-      <h1 class="font-semibold text-xl uppercase text-primary">Ingresar</h1>
-      <p class="text-sm">Ingrese sus credenciales para acceder al sistema.</p>
+      <h1 class="text-primary font-bold text-xl">Inciar Sesión</h1>
+      <p class="text-sm text-gray-500">Ingresa tus credenciales para ingresar al sistema.</p>
     </div>
 
-    <form action="" class="space-y-5">
+    <form class="space-y-5 w-full">
 
       <!-- Correo -->
-      <div class="flex flex-col space-y-2">
-        <label for="email" class="text-sm">Correo:</label>
-
+      <div class="gap-y-2 flex flex-col">
+        <label for="email" class="text-sm font-medium">Correo:</label>
         <div class="relative">
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Ingrese su correo"
-            class="border rounded-lg border-gray-300 text-sm px-4 py-2.5 w-full pl-10 focus:outline-primary"
+            class="border rounded-lg border-gray-300 text-sm px-4 py-3 w-full pl-12 focus:outline-primary"
           >
           <lucide-icon [name]="AtSign" class="absolute text-gray-500 size-4 top-1/2 -translate-y-1/2 left-2" />
         </div>
       </div>
 
       <!-- Contraseña -->
-      <div class="flex flex-col space-y-2">
-        <label for="password" class="text-sm">Contraseña:</label>
-
+      <div class="gap-y-2 flex flex-col">
+        <label for="password" class="text-sm font-medium">Contraseña:</label>
         <div class="relative">
           <input
             type="password"
             name="password"
             id="password"
             placeholder="Ingrese su contraseña"
-            class="border rounded-lg border-gray-300 text-sm px-4 py-2.5 w-full pl-10 focus:outline-primary"
+            class="border rounded-lg border-gray-300 text-sm px-4 py-3 w-full pl-12 focus:outline-primary"
           >
           <lucide-icon [name]="Lock" class="absolute text-gray-500 size-4 top-1/2 -translate-y-1/2 left-2" />
         </div>
+        <a routerLink="" class="text-sm text-primary font-medium text-end">Olvidé mi contraseña</a>
       </div>
 
       <!-- Boton -->
@@ -48,7 +50,12 @@
       </button>
     </form>
 
-  </div>
+    <!-- Redes Sociales -->
+    <div class="flex items-center space-x-3">
 
+    </div>
+
+
+  </div>
 
 </section>
