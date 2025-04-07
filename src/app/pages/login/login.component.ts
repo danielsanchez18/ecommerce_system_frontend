@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { AtSign, Lock, LucideAngularModule, ShoppingBag } from 'lucide-angular';
+import { AtSign, Github, Lock, LucideAngularModule, Mail, ShoppingBag } from 'lucide-angular';
 
 @Component({
   selector: 'page-login',
@@ -14,6 +14,7 @@ export class PageLogin {
 
   readonly AtSign = AtSign;
   readonly Lock = Lock;
-  readonly ShoppingBag = ShoppingBag;
+  readonly Mail = Mail;
+  readonly Github = Github;
 
 }
