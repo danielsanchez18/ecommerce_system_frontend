@@ -27,7 +27,7 @@
 }
 
 .btn-primary {
-  @apply bg-primary text-white text-sm w-full font-medium rounded-lg py-2 hover:bg-primary-dark transition-colors;
+  @apply bg-primary text-white text-sm w-full font-medium rounded-lg py-3 hover:bg-primary-dark transition-colors;
 }
 
 input {
