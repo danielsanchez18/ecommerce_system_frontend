@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/* Adds pointer cursor to buttons */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* Defaults hover styles on all devices */
+@custom-variant hover (&:hover);
+
+
+@theme {
+
+  --font-primary: "Inter", sans-serif;
+
+  --color-primary: #51965c;
+  --color-primary-light: #75b37f;
+  --color-primary-dark: #396f42;
+
+}
+
+:root {
+  @apply font-primary;
+}
+
+.btn-primary {
+  @apply bg-primary text-white text-sm w-full font-medium rounded-lg py-2 hover:bg-primary-dark transition-colors;
+}
+
+input {
+  @apply placeholder:text-gray-500
+}
