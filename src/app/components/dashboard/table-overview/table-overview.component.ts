@@ -33,7 +33,7 @@ export class ComponentDashboardTableOverview {
       icon: ShoppingBag,
       title: 'Pedidos Recientes',
       link: 'pedidos',
-      isActive: false,
+      isActive: true,
       description: 'Revisa los pedidos últimos pedidos realizados'
     },
 
@@ -65,7 +65,7 @@ export class ComponentDashboardTableOverview {
       icon: TriangleAlert,
       title: 'Denuncias',
       link: 'denucias',
-      isActive: true,
+      isActive: false,
       description: 'Reporte de las denuncias hechas por los usuarios'
     },
   ]
