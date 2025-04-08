@@ -1,227 +1,47 @@
-<div class="divide-y divide-gray-300 ">
+<section class="divide-y divide-zinc-200">
 
-  <section class="grid grid-cols-[auto_1fr_1fr_auto] py-3 items-center gap-x-3">
+  @for (order of orders; track $index) {
+    <div class="space-y-3 py-5">
 
-    <!-- Foto de los productos -->
-    <div class="bg-gray-100 rounded-md size-14">
-      <img
-        src="https://imgs.search.brave.com/kbKWufxULsmI5BsHfnjOdkQpzsHaNSxBTtk_AIcr0-4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9leHBs/b3Jld2FzaGluZ3Rv/bnN0YXRlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8w/NC92aXZhY2UtOTg4/eDEwMjQuanBlZw" alt="Product Image"
-        class="w-full h-full object-cover rounded-md"
-      >
+      <div class="grid sm:grid-cols-[1fr_auto] max-sm:gap-1">
+        <a routerLink="/orders/{{ order.id }}" class="font-semibold hover:underline underline-offset-4 hover:text-primary">Pedido #{{ order.id }}</a>
+        <p class="text-gray-500 text-sm">{{ order.date }}</p>
+
+        <div class="sm:row-start-1 sm:col-start-2">
+          <component-shared-states state="{{ order.state }}" />
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-[1fr_auto] max-sm:gap-1">
+
+        <!-- Usuario -->
+        <div class="flex items-center gap-x-2">
+          <lucide-icon [img]=UserRound class="text-zinc-500 justify-self-center size-4 stroke-[1.5]"/>
+          <p class="text-sm text-gray-500">{{ order.customer }}</p>
+        </div>
+
+        <!-- Direccion -->
+        <div class="flex items-center gap-x-2">
+
+          @if (order.type === 'Delivery') {
+            <lucide-icon [img]="ShoppingBag" class="text-zinc-500 justify-self-center size-4 stroke-[1.5]"/>
+          }
+          @if (order.type === 'En Tienda') {
+            <lucide-icon [img]="Store" class="text-zinc-500 justify-self-center size-4 stroke-[1.5]"/>
+          }
+
+          <p class="text-sm text-gray-500">{{ order.address }}</p>
+        </div>
+
+        <div class="sm:row-start-1 sm:col-start-2">
+          <p class="font-medium">{{ order.total | currency:'S/. ' }}</p>
+        </div>
+      </div>
+
+
     </div>
-
-    <!-- Estado y fecha -->
-    <div class="flex flex-col">
-      <div class="text-xs">Estado</div>
-      <div class="text-xs">Hace 32 min.</div>
-    </div>
-
-    <!-- Tipo de pedido y Productos -->
-    <div class="flex flex-col">
-      <div class="text-xs">Delivery</div>
-      <div class="text-xs font-semibold">4 prod.</div>
-    </div>
-
-    <!-- Precio y total -->
-    <div class="text-xs font-semibold">S/. 32.00</div>
-
-  </section>
-
-
-  <section class="grid grid-cols-[auto_1fr_1fr_auto] items-center py-3 gap-x-3">
-
-    <!-- Foto de los productos -->
-    <div class="bg-gray-100 rounded-md size-14">
-      <img
-        src="https://imgs.search.brave.com/kbKWufxULsmI5BsHfnjOdkQpzsHaNSxBTtk_AIcr0-4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9leHBs/b3Jld2FzaGluZ3Rv/bnN0YXRlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8w/NC92aXZhY2UtOTg4/eDEwMjQuanBlZw" alt="Product Image"
-        class="w-full h-full object-cover rounded-md"
-      >
-    </div>
-
-    <!-- Estado y fecha -->
-    <div class="flex flex-col">
-      <div class="text-xs">Estado</div>
-      <div class="text-xs">Hace 32 min.</div>
-    </div>
-
-    <!-- Tipo de pedido y Productos -->
-    <div class="flex flex-col">
-      <div class="text-xs">Delivery</div>
-      <div class="text-xs font-semibold">4 prod.</div>
-    </div>
-
-    <!-- Precio y total -->
-    <div class="text-xs font-semibold">S/. 32.00</div>
-
-  </section>
-
-
-  <section class="grid grid-cols-[auto_1fr_1fr_auto] items-center py-3 gap-x-3">
-
-    <!-- Foto de los productos -->
-    <div class="bg-gray-100 rounded-md size-14">
-      <img
-        src="https://imgs.search.brave.com/kbKWufxULsmI5BsHfnjOdkQpzsHaNSxBTtk_AIcr0-4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9leHBs/b3Jld2FzaGluZ3Rv/bnN0YXRlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8w/NC92aXZhY2UtOTg4/eDEwMjQuanBlZw" alt="Product Image"
-        class="w-full h-full object-cover rounded-md"
-      >
-    </div>
-
-    <!-- Estado y fecha -->
-    <div class="flex flex-col">
-      <div class="text-xs">Estado</div>
-      <div class="text-xs">Hace 32 min.</div>
-    </div>
-
-    <!-- Tipo de pedido y Productos -->
-    <div class="flex flex-col">
-      <div class="text-xs">Delivery</div>
-      <div class="text-xs font-semibold">4 prod.</div>
-    </div>
-
-    <!-- Precio y total -->
-    <div class="text-xs font-semibold">S/. 32.00</div>
-
-  </section>
-
-
-  <section class="grid grid-cols-[auto_1fr_1fr_auto] items-center py-3 gap-x-3">
-
-    <!-- Foto de los productos -->
-    <div class="bg-gray-100 rounded-md size-14">
-      <img
-        src="https://imgs.search.brave.com/kbKWufxULsmI5BsHfnjOdkQpzsHaNSxBTtk_AIcr0-4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9leHBs/b3Jld2FzaGluZ3Rv/bnN0YXRlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8w/NC92aXZhY2UtOTg4/eDEwMjQuanBlZw" alt="Product Image"
-        class="w-full h-full object-cover rounded-md"
-      >
-    </div>
-
-    <!-- Estado y fecha -->
-    <div class="flex flex-col">
-      <div class="text-xs">Estado</div>
-      <div class="text-xs">Hace 32 min.</div>
-    </div>
-
-    <!-- Tipo de pedido y Productos -->
-    <div class="flex flex-col">
-      <div class="text-xs">Delivery</div>
-      <div class="text-xs font-semibold">4 prod.</div>
-    </div>
-
-    <!-- Precio y total -->
-    <div class="text-xs font-semibold">S/. 32.00</div>
-
-  </section>
-
-
-  <section class="grid grid-cols-[auto_1fr_1fr_auto] items-center py-3 gap-x-3">
-
-    <!-- Foto de los productos -->
-    <div class="bg-gray-100 rounded-md size-14">
-      <img
-        src="https://imgs.search.brave.com/kbKWufxULsmI5BsHfnjOdkQpzsHaNSxBTtk_AIcr0-4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9leHBs/b3Jld2FzaGluZ3Rv/bnN0YXRlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8w/NC92aXZhY2UtOTg4/eDEwMjQuanBlZw" alt="Product Image"
-        class="w-full h-full object-cover rounded-md"
-      >
-    </div>
-
-    <!-- Estado y fecha -->
-    <div class="flex flex-col">
-      <div class="text-xs">Estado</div>
-      <div class="text-xs">Hace 32 min.</div>
-    </div>
-
-    <!-- Tipo de pedido y Productos -->
-    <div class="flex flex-col">
-      <div class="text-xs">Delivery</div>
-      <div class="text-xs font-semibold">4 prod.</div>
-    </div>
-
-    <!-- Precio y total -->
-    <div class="text-xs font-semibold">S/. 32.00</div>
-
-  </section>
-
-
-  <section class="grid grid-cols-[auto_1fr_1fr_auto] items-center py-3 gap-x-3">
-
-    <!-- Foto de los productos -->
-    <div class="bg-gray-100 rounded-md size-14">
-      <img
-        src="https://imgs.search.brave.com/kbKWufxULsmI5BsHfnjOdkQpzsHaNSxBTtk_AIcr0-4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9leHBs/b3Jld2FzaGluZ3Rv/bnN0YXRlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8w/NC92aXZhY2UtOTg4/eDEwMjQuanBlZw" alt="Product Image"
-        class="w-full h-full object-cover rounded-md"
-      >
-    </div>
-
-    <!-- Estado y fecha -->
-    <div class="flex flex-col">
-      <div class="text-xs">Estado</div>
-      <div class="text-xs">Hace 32 min.</div>
-    </div>
-
-    <!-- Tipo de pedido y Productos -->
-    <div class="flex flex-col">
-      <div class="text-xs">Delivery</div>
-      <div class="text-xs font-semibold">4 prod.</div>
-    </div>
-
-    <!-- Precio y total -->
-    <div class="text-xs font-semibold">S/. 32.00</div>
-
-  </section>
-
-
-  <section class="grid grid-cols-[auto_1fr_1fr_auto] items-center py-3 gap-x-3">
-
-    <!-- Foto de los productos -->
-    <div class="bg-gray-100 rounded-md size-14">
-      <img
-        src="https://imgs.search.brave.com/kbKWufxULsmI5BsHfnjOdkQpzsHaNSxBTtk_AIcr0-4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9leHBs/b3Jld2FzaGluZ3Rv/bnN0YXRlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8w/NC92aXZhY2UtOTg4/eDEwMjQuanBlZw" alt="Product Image"
-        class="w-full h-full object-cover rounded-md"
-      >
-    </div>
-
-    <!-- Estado y fecha -->
-    <div class="flex flex-col">
-      <div class="text-xs">Estado</div>
-      <div class="text-xs">Hace 32 min.</div>
-    </div>
-
-    <!-- Tipo de pedido y Productos -->
-    <div class="flex flex-col">
-      <div class="text-xs">Delivery</div>
-      <div class="text-xs font-semibold">4 prod.</div>
-    </div>
-
-    <!-- Precio y total -->
-    <div class="text-xs font-semibold">S/. 32.00</div>
-
-  </section>
+  }
 
 
 
-  <section class="grid grid-cols-[auto_1fr_1fr_auto] items-center py-3 gap-x-3">
-
-    <!-- Foto de los productos -->
-    <div class="bg-gray-100 rounded-md size-14">
-      <img
-        src="https://imgs.search.brave.com/kbKWufxULsmI5BsHfnjOdkQpzsHaNSxBTtk_AIcr0-4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9leHBs/b3Jld2FzaGluZ3Rv/bnN0YXRlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8w/NC92aXZhY2UtOTg4/eDEwMjQuanBlZw" alt="Product Image"
-        class="w-full h-full object-cover rounded-md"
-      >
-    </div>
-
-    <!-- Estado y fecha -->
-    <div class="flex flex-col">
-      <div class="text-xs">Estado</div>
-      <div class="text-xs">8-04-25</div>
-    </div>
-
-    <!-- Tipo de pedido y Productos -->
-    <div class="flex flex-col">
-      <div class="text-xs">Tienda</div>
-      <div class="text-xs font-semibold">12 prod.</div>
-    </div>
-
-    <!-- Precio y total -->
-    <div class="text-xs font-semibold">S/. 133.50</div>
-
-  </section>
-
-</div>
+</section>

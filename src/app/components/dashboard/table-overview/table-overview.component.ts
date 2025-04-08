@@ -43,7 +43,7 @@ export class ComponentDashboardTableOverview {
 
     { name: 'Categorias',
       icon: Tag,
-      title: 'Categorias Populares',
+      title: 'Categorías',
       link: 'categorias',
       isActive: false,
       description: 'Revisa las categorías de los productos'
