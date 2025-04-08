@@ -1,19 +1,20 @@
 <section class="divide-y divide-zinc-200">
 
   @for (product of products; track $index) {
-    <div class="py-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
+    <div class="py-3 grid sm:grid-cols-[2.5fr_1fr] md:grid-cols-[2fr_1fr_1fr] xl:grid-cols-3 items-center gap-y-1 gap-x-4">
 
-      <div class="flex items-center gap-x-3 sm:gap-x-5">
+      <div class="flex items-center gap-x-3 sm:gap-x-5 row-span-1 sm:row-span-2 md:row-span-1">
 
         <!-- Imagen -->
-        <div class="min-h-18 min-w-18 max-w-18 max-h-18 bg-gray-200 rounded-lg contain-content">
+        <div class="min-h-18 min-w-18 max-w-18 max-h-18 bg-gray-200 border border-gray-300 rounded-lg contain-content">
           <img [src]="product.image" alt="" class="h-18 object-cover" />
         </div>
 
+        <!-- Nombre / Disponibilidad / Categoría / Precio / Descuento -->
         <div class="space-y-1">
           <div class="flex items-center gap-x-2">
             <!-- Nombre -->
-            <a routerLink="/productos/1" class="line-clamp-1 font-semibold text-sm hover:underline underline-offset-4 hover:text-primary">
+            <a routerLink="/productos/{{product.id}}" class="line-clamp-1 font-semibold text-sm hover:underline underline-offset-4 hover:text-primary">
               {{ product.name }}
             </a>
 
@@ -29,15 +30,35 @@
           <!-- Categoría -->
           <div class="flex items-center gap-x-2">
             <lucide-icon [img]=Tag class="text-zinc-500 justify-self-center size-3 sm:size-4 stroke-[1.5]"/>
-            <p class="text-xs sm:text-sm text-gray-500">
+            <p class="text-sm text-gray-500">
               {{ product.category }}
             </p>
           </div>
 
-          <!-- Precio -->
-          <p class="font-medium text-sm">{{ product.price | currency:'S/. ' }}</p>
+          <div class="flex items-center gap-x-2">
+            <!-- Precio -->
+            <p class="font-medium text-sm">{{ product.price | currency:'S/. ' }}</p>
 
+            <!-- Oferta / Promoción -->
+            @if (product.offer) {
+              <component-shared-states state="En Oferta" />
+            }
+            @if (product.promotion) {
+              <component-shared-states state="En Promocion" />
+            }
+          </div>
         </div>
+      </div>
+
+      <!-- Ventas / Pedidos -->
+      <div class="text-center text-sm flex items-center md:flex-col gap-x-2 gap-y-1 max-md:mt-2">
+        <p class="text-gray-500">Ventas</p>
+        <p class="font-medium">{{ product.sales | currency: 'S/. ' }}</p>
+      </div>
+
+      <div class="text-center text-sm flex items-center md:flex-col sm:col-start-2 md:col-start-3 gap-x-2 gap-y-1">
+        <p class="text-gray-500">Pedidos</p>
+        <p class="font-medium">{{ product.orders }}</p>
       </div>
 
     </div>

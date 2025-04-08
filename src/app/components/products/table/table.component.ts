@@ -5,7 +5,7 @@ import { ComponentSharedStates } from '@components/shared/states/states.componen
 import { CircleCheck, CircleMinus, LucideAngularModule, Tag } from 'lucide-angular';
 
 @Component({
-    selector: 'component-products-table',
+  selector: 'component-products-table',
   imports: [
     RouterLink,
     CommonModule,
@@ -29,7 +29,7 @@ export class ComponentProductsTable {
       enabled: true,
       image: 'https://tofuu.getjusto.com/orioneat-local/resized2/fraR3RcPrCtjCC6ZY-2400-x.webp',
       orders: 57,
-      promocion: true,
+      promotion: true,
       offer: false,
       sales: 435.30
     },
@@ -41,8 +41,8 @@ export class ComponentProductsTable {
       enabled: true,
       image: 'https://img.freepik.com/fotos-premium/hamburguesa-clasica-americana-papas-fritas-ia-generativa-fondo-blanco_209190-79.jpg',
       orders: 120,
-      promocion: false,
-      offer: false,
+      promotion: false,
+      offer: true,
       sales: 960.00
     },
     {
@@ -53,8 +53,8 @@ export class ComponentProductsTable {
       enabled: false,
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY7RbPLpeQGEKr-JMLB6L9kRdCTMtUbFJfJw&s',
       orders: 85,
-      promocion: false,
-      offer: true,
+      promotion: false,
+      offer: false,
       sales: 1020.00
     },
     {
@@ -65,7 +65,7 @@ export class ComponentProductsTable {
       enabled: true,
       image: 'https://saborusachile.cl/wp-content/uploads/2022/08/ensalada-cesar.jpg',
       orders: 45,
-      promocion: false,
+      promotion: false,
       offer: false,
       sales: 2475.00
     },
@@ -77,7 +77,7 @@ export class ComponentProductsTable {
       enabled: true,
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd7sGcPmsqjQq8AGWxbhVmZ1DYVjpgg_Idpg&s',
       orders: 76,
-      promocion: true,
+      promotion: true,
       offer: false,
       sales: 4940.00
     },
@@ -89,7 +89,7 @@ export class ComponentProductsTable {
       enabled: true,
       image: 'https://www.vvsupremo.com/wp-content/uploads/2016/02/900X570_Mexican-Style-Hot-Dogs.jpg',
       orders: 200,
-      promocion: false,
+      promotion: false,
       offer: false,
       sales: 10000.00
     },
@@ -101,7 +101,7 @@ export class ComponentProductsTable {
       enabled: true,
       image: 'https://animalgourmet.com/wp-content/uploads/2024/05/Burrito-con-carne-asada-frijoles-y-arroz-rojo.jpg',
       orders: 110,
-      promocion: false,
+      promotion: false,
       offer: false,
       sales: 9900.00
     },
@@ -113,7 +113,7 @@ export class ComponentProductsTable {
       enabled: false,
       image: 'https://mx.boost.com/sites/g/files/lpfasj161/files/2024-05/SMOOTHIE_FRESA.jpg',
       orders: 140,
-      promocion: false,
+      promotion: false,
       offer: false,
       sales: 5600.00
     },
@@ -125,7 +125,7 @@ export class ComponentProductsTable {
       enabled: true,
       image: 'https://losavilez.pe/pideonline/wp-content/uploads/2023/09/IMAGENES-AVILEZ_amricano.png.webp',
       orders: 200,
-      promocion: true,
+      promotion: true,
       offer: false,
       sales: 5000.00
     },
@@ -137,7 +137,7 @@ export class ComponentProductsTable {
       enabled: true,
       image: 'https://www.hola.com/horizon/landscape/3f40d4998fc3-tarta-manzan-arguinano-t.jpg',
       orders: 90,
-      promocion: false,
+      promotion: false,
       offer: true,
       sales: 3150.00
     }
