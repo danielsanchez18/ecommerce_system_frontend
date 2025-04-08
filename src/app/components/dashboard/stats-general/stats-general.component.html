@@ -1,0 +1,56 @@
+<section class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4">
+
+  <article class="w-full bg-white py-5 space-y-2 px-5 rounded-xl border border-gray-300">
+    <div class="flex text-sm text-gray-600 items-center justify-between">
+      <h3>Pedidos de hoy</h3>
+      <lucide-icon [img]="ShoppingBag" class="size-5 stroke-[1.5]" />
+    </div>
+
+    <div class="space-y-1">
+      <p class="font-medium text-xl">42 <span class="text-sm mr-2">pedidos</span> <span class="text-sm text-green-600">+15% ayer</span></p>
+      <p class="text-xs text-gray-500">2 pendientes / 5 en proceso</p>
+    </div>
+  </article>
+
+  <!-- Ventas del día -->
+  <article class="w-full bg-white py-5 space-y-2 px-5 rounded-xl border border-gray-300">
+    <div class="flex text-sm text-gray-600 items-center justify-between">
+      <h3>Ventas del día</h3>
+      <lucide-icon [img]="Store" class="size-5 stroke-[1.5]" />
+    </div>
+
+    <div class="space-y-1">
+      <p class="font-medium text-xl line-clamp-1">S/. 7,820.75 <span class="text-sm text-green-600">+15% ayer</span></p>
+      <p class="text-xs text-gray-500">10 online / 32 en tienda</p>
+    </div>
+  </article>
+
+
+  <!-- Usuarios en línea -->
+  <article class="w-full bg-white py-5 space-y-2 px-5 rounded-xl border border-gray-300">
+    <div class="flex text-sm text-gray-600 items-center justify-between">
+      <h3>Usuarios en línea</h3>
+      <lucide-icon [img]="UsersRound" class="size-5 stroke-[1.5]" />
+    </div>
+
+    <div class="space-y-1">
+      <p class="font-medium text-xl">32<span class="text-sm"> / 235 usuarios</span></p>
+      <p class="text-xs text-gray-500 line-clamp-1">Último registrado: Daniel Sanchez</p>
+    </div>
+  </article>
+
+  <!-- Reclamos -->
+  <article class="w-full bg-white py-5 space-y-2 px-5 rounded-xl border border-gray-300">
+    <div class="flex text-sm text-gray-600 items-center justify-between">
+      <h3>Reclamos de hoy</h3>
+      <lucide-icon [img]="TriangleAlert" class="size-5 stroke-[1.5]" />
+    </div>
+
+    <div class="space-y-1">
+      <p class="font-medium text-xl">0 <span class="text-sm">reclamos</span></p>
+      <p class="text-xs text-gray-500">2 Esta Semana</p>
+    </div>
+  </article>
+
+
+</section>
