@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ComponentOrdersTable } from '@components/orders/table/table.component';
 import { LucideAngularModule, ShoppingBag, Package2, Tag, UsersRound, TriangleAlert, Search, ChevronDown, TrendingUp } from 'lucide-angular';
 
 @Component({
   selector: 'component-dashboard-table-overview',
   imports: [
     LucideAngularModule,
-    CommonModule, RouterModule
+    CommonModule, RouterModule,
+    ComponentOrdersTable
   ],
   templateUrl: './table-overview.component.html',
 })
@@ -57,7 +59,7 @@ export class ComponentDashboardTableOverview {
 
     { name: 'Denuncias',
       icon: TriangleAlert,
-      tile: 'Denuncias',
+      title: 'Denuncias',
       link: 'denucias',
       isActive: false,
       description: 'Reporte de las denuncias hechas por los usuarios'

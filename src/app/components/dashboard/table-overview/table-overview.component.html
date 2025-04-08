@@ -24,9 +24,10 @@
   <!-- Contenido -->
 
   <div class="flex justify-between items-center">
+
     <h2 class="text-sm font-semibold">{{ categoryActive?.title }}</h2>
     <a routerLink="{{categoryActive.link}}"
-      class="border border-primary text-xs font-semibold rounded-lg text-primary px-3 py-2"
+      class="border border-primary text-xs font-semibold rounded-lg text-primary px-3 py-2 hover:bg-primary hover:text-white transition duration-300 ease-in-out"
     >
       Ver más
     </a>
@@ -35,7 +36,7 @@
   @switch (categoryActive?.name) {
 
     @case ('Pedidos') {
-      <h1>Tabla de pedidos</h1>
+      <component-orders-table />
     }
 
     @case ('Productos') {
