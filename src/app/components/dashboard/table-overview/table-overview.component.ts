@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ComponentOrdersTable } from '@components/orders/table/table.component';
+import { ComponentProductsTable } from '@components/products/table/table.component';
 import { LucideAngularModule, ShoppingBag, Package2, Tag, UsersRound, TriangleAlert, Search, ChevronDown, TrendingUp } from 'lucide-angular';
 
 @Component({
@@ -9,7 +10,7 @@ import { LucideAngularModule, ShoppingBag, Package2, Tag, UsersRound, TriangleAl
   imports: [
     LucideAngularModule,
     CommonModule, RouterModule,
-    ComponentOrdersTable
+    ComponentOrdersTable, ComponentProductsTable
   ],
   templateUrl: './table-overview.component.html',
 })
@@ -29,7 +30,7 @@ export class ComponentDashboardTableOverview {
       icon: ShoppingBag,
       title: 'Pedidos Recientes',
       link: 'pedidos',
-      isActive: true,
+      isActive: false,
       description: 'Revisa los pedidos últimos pedidos realizados'
     },
 
@@ -37,7 +38,7 @@ export class ComponentDashboardTableOverview {
       icon: Package2,
       title: 'Productos Populares',
       link: 'productos',
-      isActive: false,
+      isActive: true,
       description: 'Hecha a un vistazo a los productos más populares'
     },
 

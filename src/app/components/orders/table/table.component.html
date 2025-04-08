@@ -4,10 +4,15 @@
     <div class="space-y-3 py-5">
 
       <div class="grid sm:grid-cols-[1fr_auto] max-sm:gap-1">
+
+        <!-- Código de la orden -->
         <a routerLink="/orders/{{ order.id }}" class="font-semibold hover:underline underline-offset-4 hover:text-primary">Pedido #{{ order.id }}</a>
+
+        <!-- Fecha -->
         <p class="text-gray-500 text-sm">{{ order.date }}</p>
 
         <div class="sm:row-start-1 sm:col-start-2">
+          <!-- Estado de la orden desde el componente hijo -->
           <component-shared-states state="{{ order.state }}" />
         </div>
       </div>
@@ -30,10 +35,12 @@
             <lucide-icon [img]="Store" class="text-zinc-500 justify-self-center size-4 stroke-[1.5]"/>
           }
 
+          <!-- Direccion -->
           <p class="text-sm text-gray-500">{{ order.address }}</p>
         </div>
 
         <div class="sm:row-start-1 sm:col-start-2">
+          <!-- Precio -->
           <p class="font-medium">{{ order.total | currency:'S/. ' }}</p>
         </div>
       </div>
