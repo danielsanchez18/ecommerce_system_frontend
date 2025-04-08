@@ -5,4 +5,8 @@ export const routes: Routes = [
   {
     path: '', component: PageLogin
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./layouts/dashboard/dashboard.routes').then(m => m.DASHBOARD_ROUTES)
+  }
 ];
