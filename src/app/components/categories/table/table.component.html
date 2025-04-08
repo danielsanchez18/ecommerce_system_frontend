@@ -3,11 +3,11 @@
   @for (category of categories; track $index) {
     <div class="py-3 grid sm:grid-cols-[2.5fr_1fr] md:grid-cols-[3fr_1fr_1fr] lg:md:grid-cols-[2fr_1fr_1fr] items-center gap-y-1 gap-x-4">
 
-      <div class="flex items-center gap-x-3 sm:gap-x-5 row-span-1 sm:row-span-2 md:row-span-1">
+      <div class="flex items-center gap-x-3 row-span-1 sm:row-span-2 md:row-span-1">
 
         <!-- Imagen -->
-        <div class="min-h-18 min-w-18 max-w-18 max-h-18 bg-gray-200 border border-gray-300 rounded-lg contain-content">
-          <img [src]="category.image" alt="" class="h-18 object-cover" />
+        <div class="min-h-16 min-w-16 max-w-16 max-h-16 bg-gray-200 border border-gray-300 rounded-lg contain-content">
+          <img [src]="category.image" alt="" class="h-16 object-cover" />
         </div>
 
         <!-- Nombre / Disponibilidad / Productos -->

@@ -1,0 +1,59 @@
+<section class="divide-y divide-zinc-200">
+
+  @for (user of users; track $index) {
+    <div class="py-3 grid sm:grid-cols-[2fr_1fr_1fr] md:grid-cols-[3fr_1fr_1fr_1fr] lg:md:grid-cols-[2fr_1fr_1fr_1fr] gap-y-1 gap-x-4">
+
+      <div class="flex items-center gap-x-3 row-span-1 sm:row-span-2 md:row-span-1">
+
+        <!-- Imagen -->
+        <div class="min-h-12 min-w-12 max-w-12 max-h-12 bg-gray-200 border border-gray-300 rounded-full contain-content">
+          <img [src]="user.image" alt="" class="h-12 object-cover" />
+        </div>
+
+        <!-- Nombre / Disponibilidad / Rol -->
+        <div class="space-y-0">
+          <div class="flex items-center gap-x-2">
+            <!-- Nombre -->
+            <a routerLink="/usuarios/{{user.id}}" class="line-clamp-1 font-semibold text-sm hover:underline underline-offset-4 hover:text-primary">
+              {{ user.name }}
+            </a>
+
+            <!-- Disponibilidad -->
+            @if (user.enabled) {
+              <lucide-icon [img]=CircleCheck class="text-green-600 justify-self-center size-4 stroke-[1.5]"/>
+            }
+            @else {
+              <lucide-icon [img]=CircleMinus class="text-gray-700 justify-self-center size-4 stroke-[1.5]"/>
+            }
+          </div>
+
+          <!-- Correo -->
+            <p class="text-sm text-gray-500 line-clamp-1">
+              {{ user.email }}
+            </p>
+        </div>
+      </div>
+
+      <!-- Rol -->
+      <div class="flex items-center gap-x-2 sm:row-span-2 md:row-span-1 max-sm:mt-3">
+        <lucide-icon [img]=UserRoundCog class="text-zinc-500 justify-self-center size-4 stroke-[1.5]"/>
+        <p class="text-sm text-gray-500 line-clamp-1">
+          {{ user.role }}
+        </p>
+      </div>
+
+      <!-- Ventas / Pedidos -->
+      <div class="md:text-center text-sm flex items-center md:flex-col gap-x-2 gap-y-1">
+        <p class="text-gray-500 line-clamp-1">Registrado</p>
+        <p class="font-medium text-nowrap">{{ user.createdAt }}</p>
+      </div>
+
+      <div class="text-center max-md:text-start text-sm flex items-center md:flex-col sm:col-start-3 md:col-start-4 gap-x-2 gap-y-1">
+        <p class="text-gray-500 line-clamp-1">Última Activ.</p>
+        <p class="font-medium text-nowrap">{{ user.lastLogin }}</p>
+      </div>
+
+    </div>
+  }
+
+</section>
