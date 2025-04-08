@@ -1,0 +1,60 @@
+<section class="w-full p-5 rounded-xl border border-gray-300 bg-white space-y-5">
+
+  <!-- Categorias -->
+  <div class="flex gap-x-3 pb-3 overflow-x-auto">
+
+    @for (category of categories; track $index) {
+      <button
+        type="button"
+        (click)="categorySelect(category)"
+        class="border min-w-52 w-full hover:shadow-md hover:text-primary border-gray-300 bg-white rounded-xl px-2 py-5 text-sm"
+        [ngClass]="{
+          'text-primary pointer-events-none shadow-md': category.isActive
+        }"
+      >
+        <lucide-icon [img]=category.icon class="text-zinc-500 justify-self-center size-7 stroke-[1.5]"/>
+        <p class="font-medium my-2">
+          {{ category.name }}
+        </p>
+        <p class="text-xs text-zinc-500 leading-tight text-balance">{{ category.description }}</p>
+      </button>
+    }
+  </div>
+
+  <!-- Contenido -->
+
+  <div class="flex justify-between items-center">
+    <h2 class="text-sm font-semibold">{{ categoryActive?.title }}</h2>
+    <a routerLink="{{categoryActive.link}}"
+      class="border border-primary text-xs font-semibold rounded-lg text-primary px-3 py-2"
+    >
+      Ver más
+    </a>
+  </div>
+
+  @switch (categoryActive?.name) {
+
+    @case ('Pedidos') {
+      <h1>Tabla de pedidos</h1>
+    }
+
+    @case ('Productos') {
+      <h1>Tabla de productos</h1>
+    }
+
+    @case ('Categorias') {
+      <h1>Tabla de usuarios</h1>
+    }
+
+    @case ('Usuarios') {
+      <h1>Tabla de categorias</h1>
+    }
+
+    @case ('Denuncias') {
+      <h1>Tabla de denuncias</h1>
+    }
+
+  }
+
+
+</section>
