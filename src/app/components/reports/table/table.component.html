@@ -1,0 +1,42 @@
+<section class="divide-y divide-zinc-200">
+
+  @for (report of reports; track $index) {
+
+    <div class="py-3 grid sm:grid-cols-[1fr_auto] gap-y-3 gap-x-3">
+
+      <!-- Id -->
+      <a routerLink="/denuncias/1" class="font-semibold hover:underline underline-offset-4 hover:text-primary">Denuncia #{{ report.id }}</a>
+
+      <div class="gap-y-1 sm:row-span-2 flex flex-col sm:items-end">
+        <!-- Fecha -->
+        <p class="text-gray-500 text-sm order-2">{{ report.date }}</p>
+
+        <!-- Estado -->
+        <component-shared-states state="{{ report.state }}" />
+      </div>
+
+      <div class="space-y-1">
+        <!-- Cliente -->
+        <div class="flex items-center gap-x-2">
+          <lucide-icon [img]=UserRound class="text-zinc-500 justify-self-center size-4 stroke-[1.5]"/>
+          <p class="text-sm text-gray-500 line-clamp-1">{{ report.client }}</p>
+        </div>
+
+        <!-- Pedido -->
+        <div class="flex items-center gap-x-2">
+          <lucide-icon [img]=Package class="text-zinc-500 justify-self-center size-4 stroke-[1.5]"/>
+          <p class="text-sm text-gray-500 line-clamp-1">Pedido #{{ report.order }}</p>
+        </div>
+
+        <!-- Razon -->
+        <div class="flex items-center gap-x-2 max-w-md">
+          <lucide-icon [img]=AlertTriangle class="text-zinc-500 justify-self-center size-4 stroke-[1.5]"/>
+          <p class="text-sm line-clamp-1">{{ report.reason }}</p>
+        </div>
+      </div>
+
+    </div>
+
+  }
+
+</section>

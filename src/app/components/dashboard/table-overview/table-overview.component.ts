@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ComponentCategoriesTable } from '@components/categories/table/table.component';
 import { ComponentOrdersTable } from '@components/orders/table/table.component';
 import { ComponentProductsTable } from '@components/products/table/table.component';
+import { ComponentReportsTable } from '@components/reports/table/table.component';
 import { ComponentUsersTable } from '@components/users/table/table.component';
 import { LucideAngularModule, ShoppingBag, Package2, Tag, UsersRound, TriangleAlert, Search, ChevronDown, TrendingUp } from 'lucide-angular';
 
@@ -12,7 +13,7 @@ import { LucideAngularModule, ShoppingBag, Package2, Tag, UsersRound, TriangleAl
   imports: [
     LucideAngularModule,
     CommonModule, RouterModule,
-    ComponentOrdersTable, ComponentProductsTable, ComponentCategoriesTable, ComponentUsersTable
+    ComponentOrdersTable, ComponentProductsTable, ComponentCategoriesTable, ComponentUsersTable, ComponentReportsTable
   ],
   templateUrl: './table-overview.component.html',
 })
@@ -56,7 +57,7 @@ export class ComponentDashboardTableOverview {
       icon: UsersRound,
       title: 'Usuarios Recientes',
       link: 'usuarios',
-      isActive: true,
+      isActive: false,
       description: 'Revisa el reporte de usuarios y sus roles'
     },
 
@@ -64,7 +65,7 @@ export class ComponentDashboardTableOverview {
       icon: TriangleAlert,
       title: 'Denuncias',
       link: 'denucias',
-      isActive: false,
+      isActive: true,
       description: 'Reporte de las denuncias hechas por los usuarios'
     },
   ]

@@ -1,5 +1,4 @@
 
-<!-- Para pedidos -->
 
 @if (state === "Pendiente") {
   <section class="w-fit border border-yellow-600 bg-white rounded-full text-yellow-600 text-xs font-medium py-1 px-2">
@@ -22,6 +21,18 @@
 @if (state === "Cancelado") {
   <section class="w-fit border border-red-600 bg-white rounded-full text-red-600 text-xs font-medium py-1 px-2">
     Cancelado
+  </section>
+}
+
+@if (state === "Rechazado") {
+  <section class="w-fit border border-red-600 bg-white rounded-full text-red-600 text-xs font-medium py-1 px-2">
+    Rechazado
+  </section>
+}
+
+@if (state === "Resuelto") {
+  <section class="w-fit border border-green-600 bg-white rounded-full text-green-600 text-xs font-medium py-1 px-2">
+    Resuelto
   </section>
 }
 
