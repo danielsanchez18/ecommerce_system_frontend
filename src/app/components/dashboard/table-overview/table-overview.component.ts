@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ComponentCategoriesTable } from '@components/categories/table/table.component';
 import { ComponentOrdersTable } from '@components/orders/table/table.component';
 import { ComponentProductsTable } from '@components/products/table/table.component';
 import { LucideAngularModule, ShoppingBag, Package2, Tag, UsersRound, TriangleAlert, Search, ChevronDown, TrendingUp } from 'lucide-angular';
@@ -10,7 +11,7 @@ import { LucideAngularModule, ShoppingBag, Package2, Tag, UsersRound, TriangleAl
   imports: [
     LucideAngularModule,
     CommonModule, RouterModule,
-    ComponentOrdersTable, ComponentProductsTable
+    ComponentOrdersTable, ComponentProductsTable, ComponentCategoriesTable
   ],
   templateUrl: './table-overview.component.html',
 })
@@ -38,7 +39,7 @@ export class ComponentDashboardTableOverview {
       icon: Package2,
       title: 'Productos Populares',
       link: 'productos',
-      isActive: true,
+      isActive: false,
       description: 'Hecha a un vistazo a los productos más populares'
     },
 
@@ -46,7 +47,7 @@ export class ComponentDashboardTableOverview {
       icon: Tag,
       title: 'Categorías',
       link: 'categorias',
-      isActive: false,
+      isActive: true,
       description: 'Revisa las categorías de los productos'
     },
 
