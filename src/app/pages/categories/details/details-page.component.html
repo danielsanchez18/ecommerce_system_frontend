@@ -1,0 +1,31 @@
+
+<section class="w-full flex flex-col gap-y-5 relative">
+
+  <!-- Título -->
+  <div class="">
+    <a routerLink=".." class="text-primary text-sm hover:underline underline-offset-4 font-semibold">Regresar</a>
+    <p class="text-lg font-medium">Pizzas</p>
+  </div>
+
+  <!-- Contenido -->
+  <div class="grid xl:grid-cols-[1fr_1fr] gap-5">
+
+    <!-- Detalle de Categoría -->
+    <component-categories-details />
+
+    <!-- Productos de Categoría -->
+    <component-categories-products />
+
+    <!-- Estadísticas de Categoría -->
+    <component-categories-stats class="xl:col-span-2" />
+
+  </div>
+
+  <!-- Toast Component (Editar / Eliminar / Exportar) -->
+  <div class="sticky bottomm-0 -bottom-5 sm:-bottom-3 left-1/2 transform z-50 mt-5 w-full flex justify-center">
+    <component-shared-toast [details]=true />
+  </div>
+
+
+</section>
+

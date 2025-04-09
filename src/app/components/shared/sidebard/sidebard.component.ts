@@ -19,7 +19,7 @@ export class ComponentSharedSidebard {
   readonly UserRoundCog = UserRoundCog;
 
   links = [
-    { href: "/dashboard", text: "Overview", icon: Activity },
+    // { href: "/dashboard", text: "Overview", icon: Activity },
     { href: "categorias", text: "Categorías", icon: Tag },
     { href: "productos", text: "Productos", icon: Box },
     { href: "usuarios", text: "Usuarios", icon: UsersRound },

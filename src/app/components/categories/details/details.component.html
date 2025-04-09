@@ -1,0 +1,63 @@
+<section class="w-full bg-white rounded-xl border border-gray-300 h-full contain-content p-4">
+
+  <!-- Imagen -->
+  <div class="w-full bg-gray-100 h-52 rounded-lg contain-content relative group">
+    <img
+      src="https://recetasdecocina.elmundo.es/wp-content/uploads/2024/10/sandwich-club-1-1024x683.jpg"
+      alt=""
+      class="w-full h-full object-cover"
+    >
+    <div class="w-full h-full bg-black/20 z-50 absolute group-hover:flex items-center justify-center hidden top-0 p-2">
+      <a routerLink="" class="text-xs font-medium bg-gray-950 hover:shadow-md h-fit text-white rounded-lg px-4 p-2">
+        Ver imagen completa
+      </a>
+    </div>
+  </div>
+
+  <!-- Información -->
+  <div class="grid grid-cols-2 gap-x-2 gap-y-5 mt-5 sm:px-3 items-center">
+
+    <!-- Nombre -->
+    <div class="space-y-1 max-sm:space-y-2">
+      <h3 class="font-medium sm:text-lg leading-none line-clamp-1">Sándwiches</h3>
+
+      <!-- ID -->
+      <p class="text-sm text-gray-500 flex items-center gap-x-2">
+        <lucide-icon [img]="Info" class="text-gray-500 size-4 stroke-[1.5]"/>
+        <span>ID: 1</span>
+      </p>
+    </div>
+
+    <!-- Boton de cambiar estado -->
+    <button
+      type="button"
+      class="bg-green-600  relative group text-white justify-self-end px-3 py-1.5 rounded-full text-xs font-medium hover:shadow-md">
+      Disponible
+
+      <span class="tooltip w-fit text-nowrap">Cambiar de estado</span>
+    </button>
+
+
+    <!-- Descripcion -->
+    <div class="space-y-1 col-span-2">
+      <h3 class="leading-none max-sm:text-sm">Descripción</h3>
+      <p class="text-sm text-gray-500">Categoría de sándwiches caseros (no hamburguesas)</p>
+    </div>
+
+    <!-- Fecha de creacion y actualizacion -->
+    <div class="text-sm space-y-2 col-span-2">
+      <div class="flex items-center gap-x-2">
+        <lucide-icon [img]="CalendarDays" class="text-gray-500 size-4 stroke-[1.5]"/>
+        <p>Creado:</p>
+        <p class="text-gray-500">Marzo 19, 2024 | 11:51 PM</p>
+      </div>
+
+      <div class="flex items-center gap-x-2">
+        <lucide-icon [img]="CalendarClock" class="text-gray-500 size-4 stroke-[1.5]"/>
+        <p>Actualizado:</p>
+        <p class="text-gray-500">Marzo 19, 2024 | 11:51 PM</p>
+      </div>
+    </div>
+  </div>
+
+</section>

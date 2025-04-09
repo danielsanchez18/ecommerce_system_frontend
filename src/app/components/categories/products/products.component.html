@@ -1,0 +1,80 @@
+<section class="w-full bg-white rounded-xl border border-gray-300 contain-content h-full p-4 space-y-3">
+
+  <div class="grid grid-cols-[1fr_auto_auto] items-center gap-x-2">
+    <!-- Titulo -->
+    <p class="text-sm font-semibold">Productos Asociados (12)</p>
+
+    <button class="text-xs p-1 sm:px-3 sm:py-2 text-primary bg-white border border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
+      <lucide-icon [img]=ChevronLeft class="justify-self-center size-5 sm:hidden"/>
+      <p class="hidden sm:block">Anterior</p>
+    </button>
+
+    <button class="text-xs p-1 sm:px-3 sm:py-2 text-primary bg-white border border-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
+      <lucide-icon [img]=ChevronRight class="justify-self-center size-5 sm:hidden"/>
+      <p class="hidden sm:block">Siguiente</p>
+    </button>
+
+  </div>
+
+  <section class="divide-y divide-zinc-200">
+
+    @for (product of products; track $index) {
+      <div class="py-3 grid sm:grid-cols-[2.5fr_1fr] md:grid-cols-[3fr_1fr_1fr] items-center gap-y-1 gap-x-4">
+
+        <div class="flex items-center gap-x-3 row-span-1 sm:row-span-2 md:row-span-1">
+
+          <!-- Imagen -->
+          <div class="min-h-12 min-w-12 max-w-12 max-h-12 bg-gray-200 border border-gray-300 rounded-lg contain-content">
+            <img [src]="product.image" alt="" class="h-12 object-cover" />
+          </div>
+
+          <!-- Nombre / Disponibilidad / Precio / Descuento -->
+          <div class="space-y-1">
+            <div class="flex items-center gap-x-2">
+              <!-- Nombre -->
+              <a routerLink="/dashboard/productos/{{product.id}}" class="line-clamp-1 font-semibold text-sm hover:underline underline-offset-4 hover:text-primary">
+                {{ product.name }}
+              </a>
+
+              <!-- Disponibilidad -->
+              @if (product.enabled) {
+                <lucide-icon [img]=CircleCheck class="text-green-600 justify-self-center size-4 stroke-[1.5]"/>
+              }
+              @else {
+                <lucide-icon [img]=CircleMinus class="text-gray-700 justify-self-center size-4 stroke-[1.5]"/>
+              }
+            </div>
+
+            <div class="flex items-center gap-x-2">
+              <!-- Precio -->
+              <p class="font-medium text-sm">{{ product.price | currency:'S/. ' }}</p>
+
+              <!-- Oferta / Promoción -->
+              @if (product.offer) {
+                <component-shared-states state="En Oferta" />
+              }
+              @if (product.promotion) {
+                <component-shared-states state="En Promocion" />
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Ventas / Pedidos -->
+        <div class="md:text-center text-sm flex items-center md:flex-col gap-x-2 gap-y-1 max-md:mt-2">
+          <p class="text-gray-500 line-clamp-1">Ventas Sem.</p>
+          <p class="font-medium text-nowrap">{{ product.sales | currency: 'S/. ' }}</p>
+        </div>
+
+        <div class="text-center text-sm flex items-center md:flex-col sm:col-start-2 md:col-start-3 gap-x-2 gap-y-1">
+          <p class="text-gray-500 line-clamp-1">Pedidos Sem.</p>
+          <p class="font-medium text-nowrap">{{ product.orders }}</p>
+        </div>
+
+      </div>
+    }
+
+  </section>
+
+
+</section>
