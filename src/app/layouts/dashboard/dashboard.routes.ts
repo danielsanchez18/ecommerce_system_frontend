@@ -11,10 +11,10 @@ export const DASHBOARD_ROUTES: Routes = [
         path: '',
         loadChildren: () => import('@pages/dashboard/dashboard.routes').then(m => m.DASHBOARD_ROUTES)
       },
-      // {
-      //   path: 'categorias',
-      //   loadChildren: () => import('@pages/categories/categories.routes').then(m => m.CATEGORY_ROUTES)
-      // },
+      {
+        path: 'categorias',
+        loadChildren: () => import('@pages/categories/categories.routes').then(m => m.CATEGORY_ROUTES)
+      },
       // {
       //   path: 'productos',
       //   loadChildren: () => import('@pages/products/products.routes').then(m => m.PRODUCT_ROUTES)
