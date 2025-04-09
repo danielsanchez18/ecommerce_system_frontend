@@ -1,0 +1,45 @@
+<section class="bg-white border h-full border-gray-300 rounded-lg w-full contain-content">
+  <div class="px-5 py-3 border-b border-b-gray-300">
+    <h3 class="font-medium text-sm">Vista Previa</h3>
+  </div>
+
+  <div class="p-5 space-y-5">
+    <!-- Imagen -->
+    <div class="w-full bg-gray-100 h-52 rounded-lg contain-content"></div>
+
+    <!-- Información -->
+    <div class="flex flex-col gap-5 px-3 ">
+      <!-- Nombre -->
+      <h3 class="font-medium sm:text-lg leading-none">-</h3>
+
+      <!-- Descripcion -->
+      <div class="space-y-1">
+        <h3 class="leading-none text-sm">Descripción</h3>
+        <p class="text-sm text-gray-500">
+          -
+        </p>
+      </div>
+
+      <!-- Fecha de creacion y actualizacion -->
+      <div class="text-sm space-y-2">
+        <div class="flex items-center gap-x-2">
+          <lucide-icon [img]="CalendarDays" class="text-gray-500 size-4 stroke-[1.5]" />
+          <p>Creado:</p>
+          <p class="line-clamp-1 text-gray-500">Mar 19, 2024 | 11:51 PM</p>
+        </div>
+
+        <div class="flex items-center gap-x-2">
+          <lucide-icon [img]="CalendarClock" class="text-gray-500 size-4 stroke-[1.5]" />
+          <p>Actualizado:</p>
+          <p class="text-gray-500 line-clamp-1">-</p>
+        </div>
+      </div>
+
+      <!-- Estado -->
+      <div class="flex items-center text-sm gap-x-3">
+        <h3 class="leading-none">Estado:</h3>
+        <p class="text-gray-600">Disponible</p>
+      </div>
+    </div>
+  </div>
+</section>
