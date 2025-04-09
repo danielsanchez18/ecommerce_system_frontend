@@ -37,9 +37,9 @@ input {
 
 /* Paginacion */
 .paginator-active {
-  @apply size-7 font-medium text-sm text-white bg-primary hover:bg-primary-dark border border-primary hover:border-primary-dark rounded-lg
+  @apply size-7 font-medium text-white bg-primary hover:bg-primary-dark border border-primary hover:border-primary-dark rounded-lg
 }
 
 .paginator-inactive {
-  @apply size-7 font-medium text-sm bg-white hover:border border-primary rounded-lg;
+  @apply size-7 font-medium bg-white hover:border border-primary rounded-lg;
 }
