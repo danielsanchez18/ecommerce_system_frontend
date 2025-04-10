@@ -14,7 +14,7 @@ import { LucideAngularModule } from 'lucide-angular';
 export class ComponentCategoriesForm {
 
   @Input()
-  formCreate: boolean = true;
+  formCreate: boolean = false;
 
   @Input()
   formEdit: boolean = false;

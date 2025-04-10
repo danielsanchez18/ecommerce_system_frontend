@@ -1,0 +1,97 @@
+<div class="grid grid-cols-1 xl:grid-cols-[2fr_1fr] gap-5">
+
+  <section class="w-full bg-white rounded-xl border border-gray-300 contain-content p-5
+    xl:grid xl:grid-cols-[auto_1fr] items-center">
+
+    <!-- Imagen -->
+    <div class="bg-gray-100 xl:size-60 w-full h-60 rounded-lg contain-content relative group">
+      <img
+      src="https://www.tulivery.com/tiendas/kallpa_burguer/products/2021_03_26_22_54_34png" alt="Hamburguesa Royale"
+      class="h-full rounded-lg object-cover justify-self-center">
+
+      <div class="w-full h-full bg-black/20 z-50 absolute group-hover:flex items-center justify-center hidden top-0 p-2">
+        <a routerLink="" class="text-xs font-medium bg-gray-950 hover:shadow-md h-fit text-white rounded-lg px-4 p-2">
+          Ver imagen completa
+        </a>
+      </div>
+    </div>
+
+    <!-- Información -->
+    <div class="space-y-5 xl:px-10 py-5">
+
+      <!-- Nombre -->
+      <div class="space-y-2">
+        <h3 class="font-medium text-xl leading-none">Hamburguesa Royale</h3>
+        <p class="text-sm text-gray-500">Hamburguesa casera con queso, tomate, cebolla, lechuga, mayonesa y vinagre + Papas fritas</p>
+      </div>
+
+      <!-- Categoría -->
+      <div class="flex text-sm items-center gap-x-2">
+        <lucide-icon [img]="Tag" class="text-gray-500 size-4 stroke-[1.5]"/>
+        <a routerLink="../../categorias/1" class="text-gray-500 hover:underline underline-offset-4 hover:text-green-600">Hamburguesas</a>
+      </div>
+
+      <!-- Precio -->
+      <div class="flex items-center gap-x-4">
+        <p class="font-medium text-lg leading-none">S/. 10.00</p>
+        <component-shared-states state="En Oferta" />
+      </div>
+
+    </div>
+  </section>
+
+  <section class="w-full bg-white rounded-xl border border-gray-300 contain-content">
+    <div class="px-5 py-3 border-b border-gray-300 flex items-center justify-between">
+      <h3 class="font-medium text-sm">Información del Producto</h3>
+    </div>
+
+    <div class="space-y-5 p-5 text-sm">
+
+      <!-- ID -->
+      <p class=" flex items-center gap-x-2">
+        <lucide-icon [img]="Info" class="text-gray-500 mt-[0.5px] size-4 stroke-[1.5]"/>
+        <span>ID: </span>
+        <span class="text-gray-500 text-nowrap">f81d4fae-7dec-11d0-a765-00a0c91e6bf6</span>
+      </p>
+
+      <div class="space-y-2">
+        <!-- Fecha de Creación -->
+        <div class="flex items-center gap-x-2">
+          <lucide-icon [img]="CalendarDays" class="text-gray-500 size-4 stroke-[1.5]"/>
+          <p>Creado:</p>
+          <p class="text-gray-500">Marzo 19, 2024 | 11:51 PM</p>
+        </div>
+
+        <!-- Fecha de Actualización -->
+        <div class="flex items-center gap-x-2">
+          <lucide-icon [img]="CalendarClock" class="text-gray-500 size-4 stroke-[1.5]"/>
+          <p>Actualizado:</p>
+          <p class="text-gray-500">Marzo 19, 2024 | 11:51 PM</p>
+        </div>
+      </div>
+
+       <!-- Oferta -->
+      <div class="flex items-center text-sm gap-x-3">
+        <lucide-icon [img]="CircleDollarSign" class="text-gray-500 size-4 stroke-[1.5]"/>
+        <h3 class="leading-none">Oferta:</h3>
+        <p class="text-gray-600">Sí</p>
+        <a routerLink="../ofertas/1" class="text-green-600 text-sm hover:underline underline-offset-4">Ver Oferta</a>
+      </div>
+
+      <!-- Promoción -->
+      <div class="flex items-center text-sm gap-x-3">
+        <lucide-icon [img]="BadgePercent" class="text-gray-500 size-4 stroke-[1.5]"/>
+        <h3 class="leading-none">Promoción:</h3>
+        <p class="text-gray-600">No</p>
+      </div>
+
+      <!-- Estado -->
+      <div class="flex items-center text-sm gap-x-3">
+        <h3 class="leading-none">Estado:</h3>
+        <p class="text-gray-600">Disponible</p>
+      </div>
+
+    </div>
+  </section>
+
+</div>
