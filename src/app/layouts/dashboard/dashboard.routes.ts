@@ -15,10 +15,10 @@ export const DASHBOARD_ROUTES: Routes = [
         path: 'categorias',
         loadChildren: () => import('@pages/categories/categories.routes').then(m => m.CATEGORY_ROUTES)
       },
-      // {
-      //   path: 'productos',
-      //   loadChildren: () => import('@pages/products/products.routes').then(m => m.PRODUCT_ROUTES)
-      // },
+      {
+        path: 'productos',
+        loadChildren: () => import('@pages/products/products.routes').then(m => m.PRODUCT_ROUTES)
+      },
       // {
       //   path: 'roles',
       //   loadChildren: () => import('@pages/roles/roles.routes').then(m => m.ROLE_ROUTES)
