@@ -12,6 +12,10 @@ export const CATEGORY_ROUTES: Routes = [
   {
     path: ':id',
     loadComponent: () => import('./details/details-page.component').then(m => m.PageCategoriesDetails)
+  },
+  {
+    path: ':id/editar',
+    loadComponent: () => import('./edit/edit-page.component').then(m => m.PageCategoriesEdit)
   }
 
 ];
