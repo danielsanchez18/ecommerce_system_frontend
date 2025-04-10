@@ -1,6 +1,6 @@
-<div class="flex flex-col gap-y-5">
+<div class="grid xl:grid-cols-2 gap-5">
 
-  <!-- Card Principal -->
+  <!-- Card Usuario -->
   <section class="w-full p-3 rounded-xl border border-gray-300 bg-white contain-content pb-5">
 
     <!-- Portada -->
@@ -18,103 +18,118 @@
 
     <!-- Información -->
     <div class="text-center">
+
+      <!-- Nombre -->
       <p class="text-lg font-medium">Daniel Sánchez</p>
 
-      <div class="flex items-center gap-2 mx-auto w-fit">
+      <!-- Rol -->
+      <div class="flex items-center gap-2 mx-auto w-fit mb-5">
         <lucide-icon [name]="UserRoundCog" class="size-4 stroke-[1.5]"/>
         <p class="text-sm">Administrador</p>
       </div>
 
-      <div class="mt-5 flex gap-2 mx-auto w-fit">
-        <a routerLink="" class="text-xs font-medium text-white bg-primary border border-primary py-1.5 px-3 rounded-full hover:shadow-md">Enviar mensaje</a>
-      </div>
-
+      <!-- Botón Enviar Mensaje -->
+      <a routerLink="" class="text-xs font-medium text-white bg-primary border border-primary py-1.5 px-3 rounded-full hover:shadow-md">Enviar mensaje</a>
+      <!-- <div class="mt-5 flex gap-2 mx-auto w-fit">
+      </div> -->
     </div>
-
   </section>
 
 
-  <!-- Informacion del Usuario -->
-  <section class="w-full px-4 sm:px-5 py-5 rounded-xl bg-white border border-gray-300 contain-content space-y-10">
+  <!-- Card Información -->
+  <section class="w-full px-4 sm:px-5 py-5 rounded-xl border border-gray-300 bg-white space-y-5">
 
-    <!-- Titulo -->
-    <div>
-      <p class="text-lg font-medium">Información del Usuario</p>
-      <p class="text-sm text-gray-500">Información personal y de contacto</p>
-    </div>
+    <h3 class="font-medium">Información Personal</h3>
 
-    <div class="grid xl:grid-cols-2 gap-x-10 gap-y-10">
+    <div class="space-y-4 text-sm">
 
-      <!-- Datos Personales -->
+      <!-- ID -->
+      <p class=" flex items-center gap-x-3 ">
+        <lucide-icon [img]="Info" class="hidden sm:flex text-gray-500 mt-[0.5px] size-4 stroke-[1.5]"/>
+        <span class="text-gray-500">ID:</span>
+        <span class="text-nowrap ">f81d4fae-7dec-11d0-a765-00a0c91e6bf6</span>
+      </p>
+
+      <!-- Nombre / Correo / Teléfono -->
       <div class="space-y-1">
-        <p class="font-medium mb-3">Datos Personales</p>
 
-        <!-- ID -->
-        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
-          <p class="text-gray-500">ID</p>
-          <p>f81d4fae-7dec-11d0-a765-00a0c91e6bf6</p>
-        </div>
-
-        <!-- Nombre Completo -->
-        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
-          <p class="text-gray-500">Nombre</p>
-          <p>Jhon Doe</p>
-        </div>
+        <!-- Nombre -->
+        <p class=" flex items-center gap-x-3">
+          <lucide-icon [img]="UserRound" class="text-gray-500 mt-[0.5px] size-4 stroke-[1.5]"/>
+          <span class="text-gray-500 hidden sm:flex">Nombre:</span>
+          <span class="text-nowrap">Daniel Sánchez</span>
+        </p>
 
         <!-- Correo -->
-        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
-          <p class="text-gray-500">Correo </p>
-          <p>jhondoe&#64;gmail.com</p>
-        </div>
+        <p class=" flex items-center gap-x-3">
+          <lucide-icon [img]="Mail" class="text-gray-500 mt-[0.5px] size-4 stroke-[1.5]"/>
+          <span class="text-gray-500 hidden sm:flex">Correo:</span>
+          <span class="text-nowrap">dsanchez151r&#64;gmail.com</span>
+        </p>
 
-        <!-- Telefono -->
-        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
-          <p class="text-gray-500">Teléfono</p>
-          <p>936245721</p>
-        </div>
-
-        <!-- Fecha de Creacion -->
-        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
-          <p class="text-gray-500">Fecha de Creación</p>
-          <p>24 Mar 2024 | 08:53 PM</p>
-        </div>
-
-        <!-- Fecha de Actualizacion -->
-        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
-          <p class="text-gray-500">Fecha de Actualización</p>
-          <p>Sin actualizar</p>
-        </div>
-
-        <!-- Estado -->
-        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
-          <p class="text-gray-500">Estado</p>
-          <p>Activo</p>
-        </div>
-
+        <!-- Teléfono -->
+        <p class=" flex items-center gap-x-3">
+          <lucide-icon [img]="Phone" class="text-gray-500 mt-[0.5px] size-4 stroke-[1.5]"/>
+          <span class="text-gray-500 hidden sm:flex">Teléfono:</span>
+          <span class="text-nowrap">936245721</span>
+        </p>
       </div>
 
-      <!-- Direcciones -->
+      <!-- Fechas Creación / Actualización / Última Conexión -->
+      <!-- Nombre / Correo / Teléfono -->
       <div class="space-y-1">
-        <p class="font-medium mb-3">Direcciones</p>
 
-        <div class="grid divide-y divide-gray-200 sm:divide-y-0 sm:gap-y-1">
-          @for (address of addresses; track $index) {
-            <component-addresses-card [address]="address" />
-          }
-        </div>
+        <!-- Nombre -->
+        <p class=" flex items-center gap-x-3">
+          <lucide-icon [img]="CalendarDays" class="text-gray-500 mt-[0.5px] size-4 stroke-[1.5]"/>
+          <span class="text-gray-500">Creado:</span>
+          <span class="text-nowrap">Abr 04, 2025 </span>
+        </p>
+
+        <!-- Correo -->
+        <p class=" flex items-center gap-x-3">
+          <lucide-icon [img]="CalendarClock" class="text-gray-500 mt-[0.5px] size-4 stroke-[1.5]"/>
+          <span class="text-gray-500">Actualizado:</span>
+          <span class="text-nowrap">Jul 18, 2026 | 13:45</span>
+        </p>
+
+        <!-- Teléfono -->
+        <p class=" flex items-center gap-x-3">
+          <lucide-icon [img]="Clock" class="text-gray-500 mt-[0.5px] size-4 stroke-[1.5]"/>
+          <span class="text-gray-500">Últ. conexión:</span>
+          <span class="text-nowrap">Jul 18, 2026 | 13:45</span>
+        </p>
       </div>
 
-      <!-- Metodos de Pago -->
-      <div class="space-y-1 xl:col-span-2">
-        <p class="font-medium mb-3">Métodos de Pago</p>
-
-        <div class="grid divide-y divide-gray-200 sm:divide-y-0 sm:gap-y-1">
-          @for (creditCard of creditCards; track $index) {
-            <component-pay-methods-card [creditCard]="creditCard" />
-          }
-        </div>
-
+      <!-- Estado -->
+      <div class="flex text-sm items-center gap-x-3">
+        <p class="text-gray-500">Estado:</p>
+        <p>Activo</p>
       </div>
+    </div>
+  </section>
+
+
+  <!-- Card Direcciones -->
+  <section class="w-full px-4 sm:px-5 py-5 rounded-xl border border-gray-300 bg-white space-y-5">
+    <h3 class="font-medium">Direcciones</h3>
+
+    <div class="grid divide-y divide-gray-200 sm:divide-y-0 sm:gap-y-1">
+      @for (address of addresses; track $index) {
+        <component-addresses-card [address]="address" />
+      }
+    </div>
+  </section>
+
+
+  <!-- Card Métodos de Pago -->
+  <section class="w-full px-4 sm:px-5 py-5 rounded-xl border border-gray-300 bg-white space-y-5">
+    <h3 class="font-medium">Métodos de pago</h3>
+
+    <div class="grid divide-y divide-gray-200 sm:divide-y-0 sm:gap-y-1">
+      @for (creditCard of creditCards; track $index) {
+        <component-pay-methods-card [creditCard]="creditCard" />
+      }
     </div>
   </section>
 
