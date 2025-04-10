@@ -99,7 +99,7 @@ input[type="checkbox"] {
 
 /* Cuando el checkbox está checked, cambia el color y la posición del círculo */
 input:checked + .slider {
-  background-color: #4CAF50;
+  background-color: #51965c;
 }
 
 input:checked + .slider:before {
