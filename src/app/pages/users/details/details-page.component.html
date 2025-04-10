@@ -1,0 +1,30 @@
+
+<section class="w-full flex flex-col gap-y-7 relative">
+
+  <!-- Título -->
+  <div class="">
+    <a routerLink=".." class="text-primary text-sm hover:underline underline-offset-4 font-semibold">Regresar</a>
+    <p class="text-lg font-medium">Daniel Sánchez</p>
+  </div>
+
+  <!-- Contenido -->
+  <div class="grid gap-5">
+
+    <!-- Detalle de Usuario -->
+    <component-users-details />
+
+  <!-- Estadísticas de Ventas del Usuario -->
+    <component-users-stats />
+
+  <!-- Ordenes del Usuario -->
+    <component-users-orders />
+  </div>
+
+  <!-- Toast Component (Editar / Eliminar / Exportar) -->
+  <div class="sticky bottomm-0 -bottom-5 sm:-bottom-3 left-1/2 transform z-50 mt-5 w-full flex justify-center">
+    <component-shared-toast [disabled]=true />
+  </div>
+
+
+</section>
+

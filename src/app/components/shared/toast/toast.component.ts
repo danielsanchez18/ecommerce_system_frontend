@@ -13,4 +13,7 @@ export class ComponentSharedToast {
   @Input()
   details: boolean = false;
 
+  @Input()
+  disabled: boolean = false;
+
 }

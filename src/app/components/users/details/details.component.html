@@ -1,0 +1,121 @@
+<div class="flex flex-col gap-y-5">
+
+  <!-- Card Principal -->
+  <section class="w-full p-3 rounded-xl border border-gray-300 bg-white contain-content pb-5">
+
+    <!-- Portada -->
+    <div class="w-full h-32 rounded-lg" style="background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);">
+    </div>
+
+    <!-- Foto -->
+    <div class="size-32 mx-auto bg-white rounded-full -mt-20 p-1">
+      <img
+        src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80"
+        alt="Foto de perfil"
+        class="size-full object-cover rounded-full"
+      >
+    </div>
+
+    <!-- Información -->
+    <div class="text-center">
+      <p class="text-lg font-medium">Daniel Sánchez</p>
+
+      <div class="flex items-center gap-2 mx-auto w-fit">
+        <lucide-icon [name]="UserRoundCog" class="size-4 stroke-[1.5]"/>
+        <p class="text-sm">Administrador</p>
+      </div>
+
+      <div class="mt-5 flex gap-2 mx-auto w-fit">
+        <a routerLink="" class="text-xs font-medium text-white bg-green-600 border border-primary py-1.5 px-3 rounded-full hover:shadow-md">Enviar mensaje</a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Informacion del Usuario -->
+  <section class="w-full px-4 sm:px-5 py-5 rounded-xl bg-white border border-gray-300 contain-content space-y-10">
+
+    <!-- Titulo -->
+    <div>
+      <p class="text-lg font-medium">Información del Usuario</p>
+      <p class="text-sm text-gray-500">Información personal y de contacto</p>
+    </div>
+
+    <div class="grid xl:grid-cols-2 gap-x-10 gap-y-10">
+
+      <!-- Datos Personales -->
+      <div class="space-y-1">
+        <p class="font-medium mb-3">Datos Personales</p>
+
+        <!-- ID -->
+        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
+          <p class="text-gray-500">ID</p>
+          <p>f81d4fae-7dec-11d0-a765-00a0c91e6bf6</p>
+        </div>
+
+        <!-- Nombre Completo -->
+        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
+          <p class="text-gray-500">Nombre</p>
+          <p>Jhon Doe</p>
+        </div>
+
+        <!-- Correo -->
+        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
+          <p class="text-gray-500">Correo </p>
+          <p>jhondoe&#64;gmail.com</p>
+        </div>
+
+        <!-- Telefono -->
+        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
+          <p class="text-gray-500">Teléfono</p>
+          <p>936245721</p>
+        </div>
+
+        <!-- Fecha de Creacion -->
+        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
+          <p class="text-gray-500">Fecha de Creación</p>
+          <p>24 Mar 2024 | 08:53 PM</p>
+        </div>
+
+        <!-- Fecha de Actualizacion -->
+        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
+          <p class="text-gray-500">Fecha de Actualización</p>
+          <p>Sin actualizar</p>
+        </div>
+
+        <!-- Estado -->
+        <div class="flex text-sm items-center gap-x-3 sm:gap-2 sm:justify-between">
+          <p class="text-gray-500">Estado</p>
+          <p>Activo</p>
+        </div>
+
+      </div>
+
+      <!-- Direcciones -->
+      <div class="space-y-1">
+        <p class="font-medium mb-3">Direcciones</p>
+
+        <div class="grid divide-y divide-gray-200 sm:divide-y-0 sm:gap-y-1">
+          @for (address of addresses; track $index) {
+            <component-addresses-card [address]="address" />
+          }
+        </div>
+      </div>
+
+      <!-- Metodos de Pago -->
+      <div class="space-y-1 xl:col-span-2">
+        <p class="font-medium mb-3">Métodos de Pago</p>
+
+        <div class="grid divide-y divide-gray-200 sm:divide-y-0 sm:gap-y-1">
+          @for (creditCard of creditCards; track $index) {
+            <component-pay-methods-card [creditCard]="creditCard" />
+          }
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,10 @@
+<a href="#" class="block space-y-1 sm:rounded-lg sm:bg-gray-100 hover:bg-gray-100 sm:hover:bg-gray-200 py-3 sm:px-5 w-full">
+
+  @if (address.isPrincipal === true) {
+    <p class="text-xs font-medium text-primary">Dirección Principal</p>
+  }
+  @else {
+    <p class="text-xs font-medium">Dirección Secundaria</p>
+  }
+  <p class="text-sm line-clamp-1">{{ address.street }}</p>
+</a>
