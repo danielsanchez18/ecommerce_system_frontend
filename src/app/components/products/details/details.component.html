@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1 xl:grid-cols-[2fr_1fr] gap-5">
 
-  <section class="w-full bg-white rounded-xl border border-gray-300 contain-content p-5
-    xl:grid xl:grid-cols-[auto_1fr] items-center">
+  <section class="w-full bg-white rounded-xl border border-gray-300 contain-content p-4
+    xl:grid xl:grid-cols-[auto_1fr] gap-x-10 items-center">
 
     <!-- Imagen -->
     <div class="bg-gray-100 xl:size-60 w-full h-60 rounded-lg contain-content relative group">
@@ -17,12 +17,12 @@
     </div>
 
     <!-- Información -->
-    <div class="space-y-5 xl:px-10 py-5">
+    <div class="space-y-5 py-5">
 
       <!-- Nombre -->
       <div class="space-y-2">
-        <h3 class="font-medium text-xl leading-none">Hamburguesa Royale</h3>
-        <p class="text-sm text-gray-500">Hamburguesa casera con queso, tomate, cebolla, lechuga, mayonesa y vinagre + Papas fritas</p>
+        <h3 class="font-medium text-lg line-clamp-2">Hamburguesa Royale</h3>
+        <p class="text-sm text-gray-500 line-clamp-2">Hamburguesa casera con queso, tomate, cebolla, lechuga, mayonesa y vinagre + Papas fritas</p>
       </div>
 
       <!-- Categoría -->
@@ -33,7 +33,7 @@
 
       <!-- Precio -->
       <div class="flex items-center gap-x-4">
-        <p class="font-medium text-lg leading-none">S/. 10.00</p>
+        <p class="font-medium leading-none">S/. 10.00</p>
         <component-shared-states state="En Oferta" />
       </div>
 
@@ -41,11 +41,11 @@
   </section>
 
   <section class="w-full bg-white rounded-xl border border-gray-300 contain-content">
-    <div class="px-5 py-3 border-b border-gray-300 flex items-center justify-between">
+    <div class="px-4 py-3 border-b border-gray-300 flex items-center justify-between">
       <h3 class="font-medium text-sm">Información del Producto</h3>
     </div>
 
-    <div class="space-y-5 p-5 text-sm">
+    <div class="space-y-5 p-4 text-sm">
 
       <!-- ID -->
       <p class=" flex items-center gap-x-2">
@@ -70,20 +70,23 @@
         </div>
       </div>
 
-       <!-- Oferta -->
-      <div class="flex items-center text-sm gap-x-3">
-        <lucide-icon [img]="CircleDollarSign" class="text-gray-500 size-4 stroke-[1.5]"/>
-        <h3 class="leading-none">Oferta:</h3>
-        <p class="text-gray-600">Sí</p>
-        <a routerLink="../ofertas/1" class="text-green-600 text-sm hover:underline underline-offset-4">Ver Oferta</a>
+      <div class="space-y-2">
+        <!-- Oferta -->
+        <div class="flex items-center text-sm gap-x-3">
+          <lucide-icon [img]="CircleDollarSign" class="text-gray-500 size-4 stroke-[1.5]"/>
+          <h3 class="leading-none">Oferta:</h3>
+          <p class="text-gray-600">Sí</p>
+          <a routerLink="../ofertas/1" class="text-green-600 text-sm hover:underline underline-offset-4">Ver Oferta</a>
+        </div>
+
+        <!-- Promoción -->
+        <div class="flex items-center text-sm gap-x-3">
+          <lucide-icon [img]="BadgePercent" class="text-gray-500 size-4 stroke-[1.5]"/>
+          <h3 class="leading-none">Promoción:</h3>
+          <p class="text-gray-600">No</p>
+        </div>
       </div>
 
-      <!-- Promoción -->
-      <div class="flex items-center text-sm gap-x-3">
-        <lucide-icon [img]="BadgePercent" class="text-gray-500 size-4 stroke-[1.5]"/>
-        <h3 class="leading-none">Promoción:</h3>
-        <p class="text-gray-600">No</p>
-      </div>
 
       <!-- Estado -->
       <div class="flex items-center text-sm gap-x-3">
