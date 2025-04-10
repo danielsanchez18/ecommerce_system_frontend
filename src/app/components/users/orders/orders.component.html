@@ -4,22 +4,14 @@
 
   <p class="font-medium">Pedidos Recientes</p>
 
-  <!-- Input de Busqueda / Importar / Filtros -->
-  <div class="grid grid-cols-[1fr_auto_auto] items-center gap-x-1">
+  <!-- Input de Busqueda / Filtros -->
+  <div class="grid grid-cols-[1fr_auto] items-center gap-x-1">
 
     <!-- Buscar -->
     <div class="relative w-full">
       <input type="text" placeholder="Buscar pedidos" class="px-4 pl-10 py-2 text-sm w-full md:w-xs rounded-lg border border-gray-300 focus:outline-primary bg-white">
       <lucide-icon [name]="Search" class="size-4 text-gray-500 absolute left-2 top-1/2 -translate-y-1/2" />
     </div>
-
-    <!-- Boton Importar / Exportar -->
-    <button type="button"
-      class="hover:bg-gray-50 font-medium text-xs flex items-center p-2 gap-x-2 h-full rounded-md border border-gray-300">
-      <lucide-icon [img]="ArrowUpDown" class="size-4 stroke-[1.5]" />
-      <p class="hidden md:block">Importar / Exportar</p>
-      <lucide-icon [img]="ChevronDown" class="size-4 stroke-[1.5] hidden md:block" />
-    </button>
 
     <!-- Boton Filtros -->
     <button type="button"
