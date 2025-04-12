@@ -19,10 +19,10 @@ export const DASHBOARD_ROUTES: Routes = [
         path: 'productos',
         loadChildren: () => import('@pages/products/products.routes').then(m => m.PRODUCT_ROUTES)
       },
-      // {
-      //   path: 'roles',
-      //   loadChildren: () => import('@pages/roles/roles.routes').then(m => m.ROLE_ROUTES)
-      // },
+      {
+        path: 'roles',
+        loadChildren: () => import('@pages/roles/roles.routes').then(m => m.ROLE_ROUTES)
+      },
       {
         path: 'usuarios',
         loadChildren: () => import('@pages/users/users.routes').then(m => m.USER_ROUTES)

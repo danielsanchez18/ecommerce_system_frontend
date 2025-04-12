@@ -1,10 +1,9 @@
 import { Routes } from '@angular/router';
-import { PageUsersOverview } from '@pages/users/overview/overview-page.component';
 
 export const USER_ROUTES: Routes = [
   {
     path: '',
-    component: PageUsersOverview
+    loadComponent: () => import('./overview/overview-page.component').then(m => m.PageUsersOverview)
   },
   {
     path: ':id',
