@@ -1,0 +1,52 @@
+<section class="w-full rounded-xl bg-white border border-gray-300 contain-content">
+
+  <div class="px-5 py-3 border-b border-b-gray-300">
+    <h3 class="font-medium text-sm">Buscar usuarios</h3>
+  </div>
+
+  <div class="p-5 space-y-4">
+
+    <!-- Boton Buscar -->
+    <div class="relative">
+      <input type="text" placeholder="Buscar usuarios para asignar"
+        class="w-full text-sm px-4 py-2 border border-gray-300 pl-11 focus:outline-primary rounded-md">
+      <lucide-icon [img]="Search" class="size-4 stroke-[1.5] absolute text-gray-500 top-0 py-2 start-2 h-full" />
+    </div>
+
+    <!-- Usuarios -->
+    <div class=" divide-y divide-gray-300">
+
+      @for (user of users; track $index) {
+        <div
+          class="px-3 py-3 grid grid-cols-[auto_1fr_auto] items-center gap-x-3">
+
+          <!-- Foto -->
+          <div class="size-12 rounded-md bg-white contain-content">
+            <img
+              src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80"
+              alt=""
+              class="size-full object-cover">
+          </div>
+
+          <!-- Informacion -->
+          <div class="space-y-0.5">
+            <a routerLink="/dashboard/usuarios/4"
+              class="text-sm font-medium hover:text-priamry hover:underline hover:text-primary underline-offset-4">
+              {{ user.name }}
+            </a>
+            <p class="text-sm text-gray-500 flex items-center gap-x-1">
+              <lucide-icon [img]="UsersRound" class="size-4 stroke-[1.5]" />
+              <span class="line-clamp-1">{{ user.roles }}</span>
+            </p>
+
+          </div>
+
+          <!-- Boton Asignar -->
+          <button class="text-xs px-3 py-1.5 rounded-md bg-primary text-white font-medium">Asignar</button>
+        </div>
+      }
+    </div>
+
+  </div>
+
+</section>
