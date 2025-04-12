@@ -22,17 +22,17 @@
           class="group py-3 grid grid-cols-[auto_1fr] items-center gap-x-3">
 
           <!-- Foto -->
-          <div class="size-12 rounded-md bg-white contain-content">
+          <div class="size-12 rounded-full bg-white contain-content">
             <img
-              src="https://images.unsplash.com/photo-1659482633369-9fe69af50bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=3&w=320&h=320&q=80"
-              alt=""
+              [src]="user.image"
+              [alt]="user.name"
               class="size-full object-cover">
           </div>
 
           <!-- Informacion -->
           <div class="space-y-0.5">
             <p class="text-sm font-medium underline-offset-4 group-hover:underline group-hover:text-primary">{{ user.name }}</p>
-            <p class="text-sm text-gray-500">Asignado el {{ user.created_at }}</p>
+            <p class="text-sm text-gray-500">Asignado el {{ user.createdAt }}</p>
           </div>
         </a>
       }
