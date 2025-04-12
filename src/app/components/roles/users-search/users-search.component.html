@@ -1,10 +1,12 @@
-<section class="w-full rounded-xl bg-white border border-gray-300 contain-content">
+<section class="h-full border border-gray-300 rounded-xl bg-white flex flex-col">
 
-  <div class="px-5 py-3 border-b border-b-gray-300">
-    <h3 class="font-medium text-sm">Buscar usuarios</h3>
+  <!-- Título -->
+  <div class="px-4 sm:px-5 py-3 border-b border-b-gray-300">
+    <h3 class="font-medium text-sm">Asignar usuarios</h3>
   </div>
 
-  <div class="p-5 space-y-4">
+  <!-- Contenido -->
+  <div class="px-4 py-5 sm:px-5 space-y-5 h-full flex flex-col">
 
     <!-- Boton Buscar -->
     <div class="relative">
@@ -13,12 +15,12 @@
       <lucide-icon [img]="Search" class="size-4 stroke-[1.5] absolute text-gray-500 top-0 py-2 start-2 h-full" />
     </div>
 
-    <!-- Usuarios -->
+    <!-- Lista de usuarios -->
     <div class=" divide-y divide-gray-300">
 
       @for (user of users; track $index) {
         <div
-          class="px-3 py-3 grid grid-cols-[auto_1fr_auto] items-center gap-x-3">
+          class="py-3 grid grid-cols-[auto_1fr_auto] items-center gap-x-3">
 
           <!-- Foto -->
           <div class="size-12 rounded-md bg-white contain-content">
@@ -31,18 +33,18 @@
           <!-- Informacion -->
           <div class="space-y-0.5">
             <a routerLink="/dashboard/usuarios/4"
-              class="text-sm font-medium hover:text-priamry hover:underline hover:text-primary underline-offset-4">
+              class="text-sm font-medium line-clamp-1 hover:underline hover:text-primary underline-offset-4">
               {{ user.name }}
             </a>
             <p class="text-sm text-gray-500 flex items-center gap-x-1">
-              <lucide-icon [img]="UsersRound" class="size-4 stroke-[1.5]" />
+              <lucide-icon [img]="UserRoundCog" class="size-4 stroke-[1.5]" />
               <span class="line-clamp-1">{{ user.roles }}</span>
             </p>
 
           </div>
 
           <!-- Boton Asignar -->
-          <button class="text-xs px-3 py-1.5 rounded-md bg-primary text-white font-medium">Asignar</button>
+          <button class="text-xs px-3 py-1.5 rounded-full bg-primary hover:bg-primary-dark text-white font-medium">Asignar</button>
         </div>
       }
     </div>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LucideAngularModule, Search, UsersRound, ChevronDown } from 'lucide-angular';
+import { LucideAngularModule, Search, UserRoundCog, ChevronDown } from 'lucide-angular';
 
 @Component({
   selector: 'component-roles-users-search',
@@ -13,7 +13,7 @@ import { LucideAngularModule, Search, UsersRound, ChevronDown } from 'lucide-ang
 export class ComponentRolesUsersSearch {
 
   readonly Search = Search;
-  readonly UsersRound = UsersRound;
+  readonly UserRoundCog = UserRoundCog;
   readonly ChevronDown = ChevronDown;
 
   users = [
