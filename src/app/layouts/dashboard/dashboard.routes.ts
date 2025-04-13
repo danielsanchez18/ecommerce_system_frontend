@@ -26,6 +26,10 @@ export const DASHBOARD_ROUTES: Routes = [
       {
         path: 'usuarios',
         loadChildren: () => import('@pages/users/users.routes').then(m => m.USER_ROUTES)
+      },
+      {
+        path: 'pedidos',
+        loadChildren: () => import('@pages/orders/orders.routes').then(m => m.ORDER_ROUTES)
       }
     ]
   }

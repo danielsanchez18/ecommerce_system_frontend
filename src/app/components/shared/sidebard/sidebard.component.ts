@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Activity, LucideAngularModule, Tag, UsersRound, UserRoundCog, Box } from 'lucide-angular';
+import { Activity, LucideAngularModule, Tag, UsersRound, UserRoundCog, Box, ShoppingBag } from 'lucide-angular';
 
 @Component({
   selector: 'component-shared-sidebard',
@@ -17,11 +17,12 @@ export class ComponentSharedSidebard {
   readonly Box = Box;
   readonly UsersRound = UsersRound;
   readonly UserRoundCog = UserRoundCog;
+  readonly ShoppingBag = ShoppingBag;
 
   links = [
-    // { href: "/dashboard", text: "Overview", icon: Activity },
     { href: "categorias", text: "Categorías", icon: Tag },
     { href: "productos", text: "Productos", icon: Box },
+    { href: "pedidos", text: "Pedidos", icon: ShoppingBag },
     { href: "usuarios", text: "Usuarios", icon: UsersRound },
     { href: "roles", text: "Roles", icon: UserRoundCog },
   ];

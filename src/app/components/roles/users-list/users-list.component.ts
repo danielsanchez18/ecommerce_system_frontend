@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LucideAngularModule, Search, ChevronDown, ChevronRight } from 'lucide-angular';
+import { LucideAngularModule, Search, ChevronDown, ChevronRight, X } from 'lucide-angular';
 
 @Component({
   selector: 'component-roles-users-list',

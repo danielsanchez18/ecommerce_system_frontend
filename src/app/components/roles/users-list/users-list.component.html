@@ -18,23 +18,29 @@
     <!-- Lista de usuarios -->
     <div class="divide-y divide-gray-200 h-full">
       @for (user of users; track $index) {
-        <a routerLink="/dashboard/usuarios/4"
-          class="group py-3 grid grid-cols-[auto_1fr] items-center gap-x-3">
+        <div class="flex items-center">
+          <a routerLink="/dashboard/usuarios/4"
+            class="group py-3 grid grid-cols-[auto_1fr] w-full items-center gap-x-3">
 
-          <!-- Foto -->
-          <div class="size-12 rounded-full bg-white contain-content">
-            <img
-              [src]="user.image"
-              [alt]="user.name"
-              class="size-full object-cover">
-          </div>
+            <!-- Foto -->
+            <div class="size-12 rounded-full bg-white contain-content">
+              <img
+                [src]="user.image"
+                [alt]="user.name"
+                class="size-full object-cover">
+            </div>
 
-          <!-- Informacion -->
-          <div class="space-y-0.5">
-            <p class="text-sm font-medium underline-offset-4 group-hover:underline group-hover:text-primary">{{ user.name }}</p>
-            <p class="text-sm text-gray-500">Asignado el {{ user.createdAt }}</p>
-          </div>
-        </a>
+            <!-- Informacion -->
+            <div>
+              <p class="text-sm font-medium underline-offset-4 group-hover:underline group-hover:text-primary">{{ user.name }}</p>
+              <p class="text-sm text-gray-500">Asignado el {{ user.createdAt }}</p>
+            </div>
+          </a>
+          <!-- Quitar Rol -->
+          <button class="text-xs px-2 py-1.5 border border-red-700 rounded-lg text-red-700 text-nowrap font-medium hover:bg-red-700 hover:text-white transition-colors duration-300">
+            Quitar
+          </button>
+        </div>
       }
     </div>
 
