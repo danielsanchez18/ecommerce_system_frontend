@@ -9,10 +9,10 @@ export const ORDER_ROUTES: Routes = [
   //   path: 'agregar',
   //   loadComponent: () => import('./add/add-page.component').then(m => m.PageProductsAdd)
   // },
-  // {
-  //   path: ':id',
-  //   loadComponent: () => import('./details/details-page.component').then(m => m.PageProductsDetails)
-  // },
+  {
+    path: ':id',
+    loadComponent: () => import('./details/details-page.component').then(m => m.PageOrdersDetails)
+  },
   // {
   //   path: ':id/editar',
   //   loadComponent: () => import('./edit/edit-page.component').then(m => m.PageProductsEdit)

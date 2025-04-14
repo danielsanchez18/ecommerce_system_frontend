@@ -16,4 +16,7 @@ export class ComponentSharedToast {
   @Input()
   disabled: boolean = false;
 
+  @Input()
+  orders: boolean = false;
+
 }

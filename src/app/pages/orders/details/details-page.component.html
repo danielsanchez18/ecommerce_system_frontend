@@ -1,0 +1,38 @@
+
+<section class="w-full flex flex-col gap-y-7 relative">
+
+  <!-- Título -->
+  <div class="">
+    <a routerLink=".." class="text-primary text-sm hover:underline underline-offset-4 font-semibold">Regresar</a>
+
+    <div class="flex items-center gap-x-5">
+      <!-- Id del Pedido -->
+      <p class="text-lg font-medium">Pedido #ORD-073722080425</p>
+
+      <!-- Estado del Pedido -->
+      <component-shared-states state="Pendiente" />
+    </div>
+
+    <!-- Fecha de pedido -->
+    <p class="text-sm text-gray-500">Actualizado hace 20 min.</p>
+  </div>
+
+  <!-- Contenido -->
+  <div class="grid lg:grid-cols-2 gap-5 h-full">
+
+    <!-- Información del Pedido -->
+    <component-orders-info />
+
+    <!-- Lista de Productos -->
+    <component-orders-products-list />
+
+  </div>
+
+  <!-- Toast Component (Editar / Eliminar / Exportar) -->
+  <div class="sticky bottomm-0 -bottom-5 sm:-bottom-3 left-1/2 transform z-50 mt-5 w-full flex justify-center">
+    <component-shared-toast [orders]=true />
+  </div>
+
+
+</section>
+

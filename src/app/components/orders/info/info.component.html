@@ -1,0 +1,128 @@
+<div class="grid gap-5">
+
+  <!-- Información del pedido -->
+  <section class="row-span-2 w-full bg-white rounded-xl border border-gray-300 contain-content">
+
+    <!-- Título -->
+    <div class="px-4 py-3 border-b border-gray-300">
+      <h3 class="font-medium text-sm">Información del pedido</h3>
+    </div>
+
+    <!-- Contenido -->
+    <div class="px-4 py-5 space-y-2">
+
+      <!-- Fecha de Creación -->
+      <div class="flex items-center gap-x-3 text-sm">
+        <lucide-icon [img]="CalendarClock" class="text-gray-500 size-4 stroke-[1.5]" />
+        <p class="text-gray-500">Creado:</p>
+        <p>00:21 | Abr 25, 2025 </p>
+      </div>
+
+      <!-- Tomado por -->
+      <div class="flex items-center gap-x-3 text-sm">
+        <lucide-icon [img]="UserRoundCog" class="text-gray-500 size-4 stroke-[1.5]" />
+        <p class="text-gray-500 text-nowrap">Tomado por:</p>
+        <p class="line-clamp-1">Daniel Sánchez (Administrador)</p>
+      </div>
+
+      <!-- Tipo de Pedido -->
+      <div class="flex items-center gap-x-3 text-sm">
+        <lucide-icon [img]="ShoppingBag" class="text-gray-500 size-4 stroke-[1.5]" />
+        <p class="text-gray-500">Tipo:</p>
+        <p>Recojo en Tienda</p>
+      </div>
+
+      <!-- Dirección -->
+      <div class="flex items-center gap-x-3 text-sm">
+        <lucide-icon [img]="Truck" class="text-gray-500 size-4 stroke-[1.5]" />
+        <p class="text-gray-500">Dirección:</p>
+        <a href="" class="line-clamp-1 hover:underline underline-offset-4 hover:text-primary">Av. Los Rosales 125 -
+          Local Centro</a>
+      </div>
+
+      <!-- Tiempo de Entrega -->
+      <div class="flex items-center gap-x-3 text-sm">
+        <lucide-icon [img]="Clock" class="text-gray-500 size-4 stroke-[1.5]" />
+        <p class="text-gray-500">Tiempo de Entrega:</p>
+        <p>32 min</p>
+      </div>
+
+      <!-- Cupón Aplicado -->
+      <div class="flex items-center gap-x-3 text-sm">
+        <lucide-icon [img]="Clock" class="text-gray-500 size-4 stroke-[1.5]" />
+        <p class="text-gray-500">Cupón Aplicado:</p>
+        <a routerLink="" class="text-primary underline underline-offset-4">DESCUENTO50</a>
+      </div>
+
+      <!-- Comentarios -->
+      <div class="text-sm">
+        <p class="text-gray-500">Comentarios:
+          <span class="text-black ml-3">Ninguno</span>
+        </p>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Método de Pago -->
+  <section class="w-full bg-white rounded-xl border border-gray-300 contain-content">
+
+    <!-- Título -->
+    <div class="px-4 py-3 border-b border-gray-300">
+      <h3 class="font-medium text-sm">Método de Pago</h3>
+    </div>
+
+    <!-- Contenido -->
+    <div class="px-4 py-5 space-y-2">
+
+      <!-- Estado de Pago -->
+      <div class="flex items-center gap-x-3 text-sm">
+        <!-- <lucide-icon [img]="CalendarClock" class="text-gray-500 size-4 stroke-[1.5]" /> -->
+        <p class="text-gray-500">Estado:</p>
+        <p>Pendiente </p>
+      </div>
+
+      <!-- Método de Pago -->
+      <div class="flex items-center gap-x-3 text-sm">
+        <lucide-icon [img]="CreditCard" class="text-gray-500 size-4 stroke-[1.5]" />
+        <p class="text-gray-500">Método de Pago:</p>
+        <p>En efectivo</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Información del Cliente -->
+  <section class="w-full bg-white rounded-xl border border-gray-300 contain-content">
+
+    <!-- Título -->
+    <div class="px-4 py-3 border-b border-gray-300">
+      <h3 class="font-medium text-sm">Información del Cliente</h3>
+    </div>
+
+    <!-- Contenido -->
+    <div class="px-4 py-5 space-y-2">
+
+      <!-- Estado de Pago -->
+      <div class="flex items-center gap-x-3 text-sm">
+        <lucide-icon [img]="UserRound" class="text-gray-500 size-4 stroke-[1.5]" />
+        <p class="text-gray-500">Cliente:</p>
+        <a routerLink="/dashboard/usuarios/1" class="hover:underline underline-offset-4 hover:text-primary">Sirene
+          Oliveira</a>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="flex items-center gap-x-3 text-sm">
+        <lucide-icon [img]="Phone" class="text-gray-500 size-4 stroke-[1.5]" />
+        <p class="text-gray-500">Teléfono:</p>
+        <p>936245721</p>
+        <a href="" class="hover:underline underline-offset-4 text-primary font-medium">Llamar</a>
+      </div>
+
+    </div>
+  </section>
+
+</div>
