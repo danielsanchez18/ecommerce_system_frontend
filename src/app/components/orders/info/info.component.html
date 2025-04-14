@@ -49,15 +49,15 @@
 
       <!-- Cupón Aplicado -->
       <div class="flex items-center gap-x-3 text-sm">
-        <lucide-icon [img]="Clock" class="text-gray-500 size-4 stroke-[1.5]" />
+        <lucide-icon [img]="TicketPercent" class="text-gray-500 size-4 stroke-[1.5]" />
         <p class="text-gray-500">Cupón Aplicado:</p>
         <a routerLink="" class="text-primary underline underline-offset-4">DESCUENTO50</a>
       </div>
 
       <!-- Comentarios -->
-      <div class="text-sm">
+      <div class="text-sm mt-5">
         <p class="text-gray-500">Comentarios:
-          <span class="text-black ml-3">Ninguno</span>
+          <span class="text-black ml-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius dolorem odit omnis asperiores enim esse, neque non eos soluta nisi, aspernatur illo, natus consectetur inventore ducimus dolore reprehenderit in saepe!</span>
         </p>
 
       </div>
@@ -79,9 +79,9 @@
 
       <!-- Estado de Pago -->
       <div class="flex items-center gap-x-3 text-sm">
-        <!-- <lucide-icon [img]="CalendarClock" class="text-gray-500 size-4 stroke-[1.5]" /> -->
+        <lucide-icon [img]="Loader" class="text-gray-500 size-4 stroke-[1.5]" />
         <p class="text-gray-500">Estado:</p>
-        <p>Pendiente </p>
+        <component-shared-states state="Pendiente" />
       </div>
 
       <!-- Método de Pago -->

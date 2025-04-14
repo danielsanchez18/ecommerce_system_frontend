@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ComponentSharedSidebard } from '@components/shared/sidebard/sidebard.component';
@@ -6,7 +7,7 @@ import { Bell, LucideAngularModule, Search, Menu, ChevronRight, MessageCircle } 
 @Component({
   selector: 'layout-dashboard',
   imports: [
-    RouterModule,
+    RouterModule, CommonModule,
     LucideAngularModule,
     ComponentSharedSidebard
   ],

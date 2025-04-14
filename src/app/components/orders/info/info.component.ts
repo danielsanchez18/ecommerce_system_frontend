@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LucideAngularModule, ShoppingBag, CalendarClock, UserRound, UserRoundCog, Truck, Clock, CreditCard, Phone } from 'lucide-angular';
+import { ComponentSharedStates } from '@components/shared/states/states.component';
+import { LucideAngularModule, ShoppingBag, CalendarClock, UserRound, UserRoundCog, Truck, Clock, CreditCard, Phone, TicketPercent, Loader } from 'lucide-angular';
 
 @Component({
   selector: 'component-orders-info',
   imports: [
     LucideAngularModule,
-    RouterLink
+    RouterLink,
+    ComponentSharedStates
   ],
   templateUrl: './info.component.html',
 })
@@ -20,5 +22,7 @@ export class ComponentOrdersInfo {
   readonly CreditCard = CreditCard;
   readonly UserRound = UserRound;
   readonly Phone = Phone;
+  readonly TicketPercent = TicketPercent;
+  readonly Loader = Loader;
 
 }
