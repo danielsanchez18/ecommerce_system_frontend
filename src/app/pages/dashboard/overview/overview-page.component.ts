@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ComponentDashboardChartsOverview } from '@components/dashboard/charts-overview/charts-overview.component';
-import { ComponentDashboardStatsOverview } from '@components/dashboard/stats-overview/stats-overview.component';
-import { ComponentDashboardTableOverview } from "../../../components/dashboard/table-overview/table-overview.component";
+import { ComponentDashboardCharts } from '@components/dashboard/charts/charts.component';
+import { ComponentDashboardStats } from '@components/dashboard/stats/stats.component';
+import { ComponentDashboardTable } from '@components/dashboard/table/table.component';
 
 @Component({
   selector: 'page-dashboard-overview',
   imports: [
     RouterModule,
-    ComponentDashboardStatsOverview,
-    ComponentDashboardChartsOverview,
-    ComponentDashboardTableOverview
+    ComponentDashboardStats,
+    ComponentDashboardCharts,
+    ComponentDashboardTable
 ],
   templateUrl: './overview-page.component.html',
 })

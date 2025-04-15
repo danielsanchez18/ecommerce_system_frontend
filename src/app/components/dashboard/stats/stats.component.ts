@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { LucideAngularModule, ShoppingBag, Store, TriangleAlert, UsersRound } from 'lucide-angular';
 
 @Component({
-  selector: 'component-dashboard-stats-overview',
+  selector: 'component-dashboard-stats',
   imports: [
     LucideAngularModule
   ],
-  templateUrl: './stats-overview.component.html',
+  templateUrl: './stats.component.html',
 })
-export class ComponentDashboardStatsOverview {
+export class ComponentDashboardStats {
 
   readonly Store = Store;
   readonly UsersRound = UsersRound;

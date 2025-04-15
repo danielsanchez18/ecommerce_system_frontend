@@ -9,15 +9,15 @@ import { ComponentUsersTable } from '@components/users/table/table.component';
 import { LucideAngularModule, ShoppingBag, Package2, Tag, UsersRound, TriangleAlert, Search, ChevronDown, TrendingUp } from 'lucide-angular';
 
 @Component({
-  selector: 'component-dashboard-table-overview',
+  selector: 'component-dashboard-table',
   imports: [
     LucideAngularModule,
     CommonModule, RouterModule,
     ComponentOrdersTable, ComponentProductsTable, ComponentCategoriesTable, ComponentUsersTable, ComponentReportsTable
   ],
-  templateUrl: './table-overview.component.html',
+  templateUrl: './table.component.html',
 })
-export class ComponentDashboardTableOverview {
+export class ComponentDashboardTable {
 
   readonly ShoppingBag = ShoppingBag;
   readonly Package2 = Package2;
