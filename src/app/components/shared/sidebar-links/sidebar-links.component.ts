@@ -3,14 +3,14 @@ import { RouterModule } from '@angular/router';
 import { Activity, LucideAngularModule, Tag, UsersRound, UserRoundCog, Box, ShoppingBag } from 'lucide-angular';
 
 @Component({
-  selector: 'component-shared-sidebard',
+  selector: 'component-shared-sidebar-links',
   imports: [
     LucideAngularModule,
     RouterModule
   ],
-  templateUrl: './sidebard.component.html',
+  templateUrl: './sidebar-links.component.html',
 })
-export class ComponentSharedSidebard {
+export class ComponentSharedSidebarLinks {
 
   readonly Activity = Activity;
   readonly Tag = Tag;
@@ -26,5 +26,20 @@ export class ComponentSharedSidebard {
     { href: "usuarios", text: "Usuarios", icon: UsersRound },
     { href: "roles", text: "Roles", icon: UserRoundCog },
   ];
+
+
+  isMobile: boolean = false;
+
+  ngOnInit() {
+    this.checkScreenSize();
+
+    window.addEventListener('resize', () => {
+      this.checkScreenSize();
+    });
+  }
+
+  checkScreenSize() {
+    this.isMobile = window.innerWidth < 1024;
+  }
 
 }

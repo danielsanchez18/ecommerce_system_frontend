@@ -1,25 +1,26 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ComponentSharedSidebard } from '@components/shared/sidebard/sidebard.component';
-import { Bell, LucideAngularModule, Search, Menu, ChevronRight, MessageCircle } from 'lucide-angular';
+import { ComponentSharedSidebarResponsive } from '@components/shared/sidebar-responsive/sidebar-responsive.component';
+import { ComponentSharedSidebarLinks } from '@components/shared/sidebar-links/sidebar-links.component';
+import { Bell, LucideAngularModule, Search, PanelLeftOpen, ChevronRight, MessageCircle } from 'lucide-angular';
 
 @Component({
   selector: 'layout-dashboard',
   imports: [
     RouterModule, CommonModule,
     LucideAngularModule,
-    ComponentSharedSidebard
-  ],
+    ComponentSharedSidebarLinks, ComponentSharedSidebarResponsive,
+    ComponentSharedSidebarLinks
+],
   templateUrl: './dashboard-layout.component.html',
 })
 export class LayoutDashboard {
 
   readonly Bell = Bell;
   readonly Search = Search;
-  readonly Menu = Menu;
+  readonly PanelLeftOpen = PanelLeftOpen;
   readonly ChevronRight = ChevronRight;
   readonly MessageCircle = MessageCircle;
-
 
 }

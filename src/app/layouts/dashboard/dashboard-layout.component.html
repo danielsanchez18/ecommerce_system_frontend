@@ -31,17 +31,32 @@
 
     <!-- Menu -->
     <div class="py-3 w-64 hidden lg:flex flex-col px-5">
-      <component-shared-sidebard></component-shared-sidebard>
+      <component-shared-sidebar-links />
     </div>
+
+    <!-- Menu Responsive -->
+    <div id="sidebar" class="hs-overlay [--auto-close:lg] lg:hidden w-64
+      hs-overlay-open:translate-x-0
+      -translate-x-full transition-all duration-300 transform
+      fixed top-0 start-0 bottom-0 z-60" role="dialog" tabindex="-1" aria-label="Sidebar" >
+      <component-shared-sidebar-responsive />
+    </div>
+
   </header>
 
   <!-- BreadCrumb -->
   <nav class="py-1.5 border-y border-y-gray-200 w-full px-5 sm:px-7 lg:hidden">
     <div class="flex items-center gap-x-3">
 
-      <!-- Boton Menu -->
-      <button class="p-2 rounded-md bg-white hover:bg-gray-100 border border-gray-300">
-        <lucide-icon [name]="Menu" class="size-4" />
+      <!-- Boton Menu Responsive -->
+      <button type="button"
+        class="p-1.5 rounded-md bg-white hover:bg-gray-100 border border-gray-300"
+        aria-haspopup="dialog" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation"
+        data-hs-overlay="#sidebar"
+      >
+
+        <lucide-icon [name]="PanelLeftOpen" class="size-4 text-gray-500" />
+
       </button>
 
       <!-- Link -->

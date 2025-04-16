@@ -1,0 +1,24 @@
+<header class="h-full w-full flex flex-col bg-white">
+
+  <div class="w-full py-3 px-7 flex items-center justify-between">
+
+    <!-- Logo -->
+    <img src="img/logo-vertical.png" alt="" class="h-10">
+
+    <!-- Boton Close Menu -->
+    <button type="button"
+      class="p-1.5 rounded-md bg-white hover:bg-gray-100 border border-gray-300"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation"
+      data-hs-overlay="#sidebar"
+    >
+
+      <lucide-icon [name]="PanelLeftClose" class="size-4 text-gray-500" />
+
+    </button>
+  </div>
+
+  <div class="w-64 flex flex-col px-5">
+    <component-shared-sidebar-links />
+  </div>
+
+</header>

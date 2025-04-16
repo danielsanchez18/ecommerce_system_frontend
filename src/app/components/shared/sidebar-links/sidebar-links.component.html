@@ -5,6 +5,7 @@
       routerLink="/dashboard"
       routerLinkActive="text-primary border-l-primary"
       [routerLinkActiveOptions]="{exact: true}"
+      [attr.data-hs-overlay]="isMobile ? '#sidebar' : null"
     >
       <lucide-icon [name]="Activity" class="size-4" />
       Overview
@@ -16,6 +17,7 @@
       class="px-5 py-2.5 text-sm text-gray-800 border-l-2 border-transparent hover:bg-gray-100 flex items-center gap-x-2.5"
       routerLink="{{link.href}}"
       routerLinkActive="text-primary border-l-primary"
+      [attr.data-hs-overlay]="isMobile ? '#sidebar' : null"
     >
       <lucide-icon [name]="link.icon" class="size-4" />
       {{link.text}}
