@@ -1,128 +1,137 @@
-<div class="grid gap-5">
+<section class="row-span-2 w-full xl:w-sm bg-white rounded-xl border border-gray-300 contain-content">
 
-  <!-- Información del pedido -->
-  <section class="row-span-2 w-full bg-white rounded-xl border border-gray-300 contain-content">
+  <!-- Título -->
+  <div class="px-4 py-3 border-b border-gray-300">
+    <h3 class="font-medium text-sm">Información del pedido</h3>
+  </div>
 
-    <!-- Título -->
-    <div class="px-4 py-3 border-b border-gray-300">
-      <h3 class="font-medium text-sm">Información del pedido</h3>
-    </div>
+  <!-- Contenido -->
+  <div class="divide-y divide-gray-300 mx-4">
 
-    <!-- Contenido -->
-    <div class="px-4 py-5 space-y-2">
+    <div class="space-y-2 py-5">
 
       <!-- Fecha de Creación -->
       <div class="flex items-center gap-x-3 text-sm">
         <lucide-icon [img]="CalendarClock" class="text-gray-500 size-4 stroke-[1.5]" />
-        <p class="text-gray-500">Creado:</p>
-        <p>00:21 | Abr 25, 2025 </p>
+        <p class="text-gray-500">Ordenado:</p>
+        <p>25 Abr 2025, 04:49 pm</p>
       </div>
 
-      <!-- Tomado por -->
+      <!-- Cupón Aplicado -->
       <div class="flex items-center gap-x-3 text-sm">
-        <lucide-icon [img]="UserRoundCog" class="text-gray-500 size-4 stroke-[1.5]" />
-        <p class="text-gray-500 text-nowrap">Tomado por:</p>
-        <p class="line-clamp-1">Daniel Sánchez (Administrador)</p>
+        <lucide-icon [img]="TicketPercent" class="text-gray-500 size-4 stroke-[1.5]" />
+        <p class="text-gray-500">Cupón:</p>
+        <!-- <p>Ninguno</p> -->
+        <a routerLink="" class="text-primary underline underline-offset-4">DESCUENTO50</a>
+      </div>
+
+    </div>
+
+
+    <!-- Tomado por  -->
+    <div class="space-y-1 text-sm py-5">
+
+      <h2 class="font-medium">Tomado por</h2>
+
+      <a routerLink="/dashboard/usuarios/1"
+        class="py-2 flex hover:bg-zinc-100 items-center rounded-lg gap-x-3 text-sm">
+
+        <!-- Foto de perfil -->
+        <div class="bg-gray-200 rounded-full min-h-10 min-w-10 size-10 contain-content row-span-2">
+          <img src="https://i.pravatar.cc/150?img=14" alt="" class="h-full">
+        </div>
+
+        <div class="flex flex-col w-full">
+          <!-- Nombre del usuario -->
+          <p class="capitalize font-medium group-hover:text-primary-dark underline-offset-4 group-hover:underline">
+            Leonardo Pérez
+          </p>
+
+          <!-- Rol del usuario -->
+          <p class="text-gray-500 text-xs">Camarero básico</p>
+        </div>
+
+        <lucide-icon [img]="ChevronRight" class="size-5 text-gray-600 row-span-2" />
+      </a>
+    </div>
+
+
+    <!-- Entrega  -->
+    <div class="space-y-2 text-sm py-5">
+
+      <div class="flex items-center gap-x-3 justify-between">
+        <h2 class="font-medium">Entrega</h2>
+
+        <a href="https://www.google.es/maps/dir/Central+Operativa+Chiclayo,+El%C3%ADas+Aguirre+826,+Chiclayo+14001/Los+Rosales+125,+Jos%C3%A9+Leonardo+Ortiz+14004/@-6.7570851,-79.8274372,16.59z/data=!4m13!4m12!1m5!1m1!1s0x904cef29cced53c1:0x6e7f1c2248f88bf2!2m2!1d-79.8379903!2d-6.772002!1m5!1m1!1s0x904ce936b4fcd2f3:0x989d2d977b8c7e32!2m2!1d-79.822945!2d-6.7547912?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank"
+          class="font-medium flex items-center gap-x-1 underline-offset-4 hover:underline text-primary">
+          <lucide-icon [img]="Map" class="size-4 " />
+          Ver en Maps
+        </a>
       </div>
 
       <!-- Tipo de Pedido -->
-      <div class="flex items-center gap-x-3 text-sm">
+      <div class="flex items-center gap-x-3 text-sm mt-5">
         <lucide-icon [img]="ShoppingBag" class="text-gray-500 size-4 stroke-[1.5]" />
-        <p class="text-gray-500">Tipo:</p>
         <p>Recojo en Tienda</p>
       </div>
 
       <!-- Dirección -->
       <div class="flex items-center gap-x-3 text-sm">
         <lucide-icon [img]="Truck" class="text-gray-500 size-4 stroke-[1.5]" />
-        <p class="text-gray-500">Dirección:</p>
-        <a href="" class="line-clamp-1 hover:underline underline-offset-4 hover:text-primary">Av. Los Rosales 125 -
-          Local Centro</a>
+        <p class="line-clamp-1">Av. Los Rosales 125 - Local Centro</p>
       </div>
 
       <!-- Tiempo de Entrega -->
       <div class="flex items-center gap-x-3 text-sm">
         <lucide-icon [img]="Clock" class="text-gray-500 size-4 stroke-[1.5]" />
-        <p class="text-gray-500">Tiempo de Entrega:</p>
+        <p class="text-gray-500">Tiempo Estimado:</p>
         <p>32 min</p>
       </div>
-
-      <!-- Cupón Aplicado -->
-      <div class="flex items-center gap-x-3 text-sm">
-        <lucide-icon [img]="TicketPercent" class="text-gray-500 size-4 stroke-[1.5]" />
-        <p class="text-gray-500">Cupón Aplicado:</p>
-        <a routerLink="" class="text-primary underline underline-offset-4">DESCUENTO50</a>
-      </div>
-
-      <!-- Comentarios -->
-      <div class="text-sm mt-5">
-        <p class="text-gray-500">Comentarios:
-          <span class="text-black ml-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius dolorem odit omnis asperiores enim esse, neque non eos soluta nisi, aspernatur illo, natus consectetur inventore ducimus dolore reprehenderit in saepe!</span>
-        </p>
-
-      </div>
     </div>
 
-  </section>
 
-
-  <!-- Método de Pago -->
-  <section class="w-full bg-white rounded-xl border border-gray-300 contain-content">
-
-    <!-- Título -->
-    <div class="px-4 py-3 border-b border-gray-300">
-      <h3 class="font-medium text-sm">Método de Pago</h3>
-    </div>
-
-    <!-- Contenido -->
-    <div class="px-4 py-5 space-y-2">
-
-      <!-- Estado de Pago -->
-      <div class="flex items-center gap-x-3 text-sm">
-        <lucide-icon [img]="Loader" class="text-gray-500 size-4 stroke-[1.5]" />
-        <p class="text-gray-500">Estado:</p>
+    <!-- Método de Pago  -->
+    <div class="space-y-2 text-sm py-5">
+      <div class="flex items-center justify-between gap-x-2">
+        <h3 class="font-medium text-sm">Pago</h3>
         <component-shared-states state="Pendiente" />
       </div>
 
       <!-- Método de Pago -->
       <div class="flex items-center gap-x-3 text-sm">
-        <lucide-icon [img]="CreditCard" class="text-gray-500 size-4 stroke-[1.5]" />
-        <p class="text-gray-500">Método de Pago:</p>
+        <lucide-icon [img]="Wallet" class="text-gray-500 size-4 stroke-[1.5]" />
+        <p class="text-gray-500">Método:</p>
         <p>En efectivo</p>
       </div>
-
-    </div>
-  </section>
-
-
-  <!-- Información del Cliente -->
-  <section class="w-full bg-white rounded-xl border border-gray-300 contain-content">
-
-    <!-- Título -->
-    <div class="px-4 py-3 border-b border-gray-300">
-      <h3 class="font-medium text-sm">Información del Cliente</h3>
     </div>
 
-    <!-- Contenido -->
-    <div class="px-4 py-5 space-y-2">
 
-      <!-- Estado de Pago -->
-      <div class="flex items-center gap-x-3 text-sm">
-        <lucide-icon [img]="UserRound" class="text-gray-500 size-4 stroke-[1.5]" />
-        <p class="text-gray-500">Cliente:</p>
-        <a routerLink="/dashboard/usuarios/1" class="hover:underline underline-offset-4 hover:text-primary">Sirene
-          Oliveira</a>
-      </div>
+    <!-- Cliente  -->
+    <div class="space-y-1 text-sm py-5">
 
-      <!-- Teléfono -->
-      <div class="flex items-center gap-x-3 text-sm">
-        <lucide-icon [img]="Phone" class="text-gray-500 size-4 stroke-[1.5]" />
-        <p class="text-gray-500">Teléfono:</p>
-        <p>936245721</p>
-        <a href="" class="hover:underline underline-offset-4 text-primary font-medium">Llamar</a>
-      </div>
+      <h2 class="font-medium">Cliente</h2>
 
+      <a routerLink="/dashboard/usuarios/1"
+        class="py-2 flex hover:bg-zinc-100 items-center rounded-lg gap-x-3 text-sm">
+
+        <!-- Foto de perfil -->
+        <div class="bg-gray-200 rounded-full min-h-10 min-w-10 size-10 contain-content row-span-2">
+          <img src="https://i.pravatar.cc/150?img=5" alt="" class="h-full">
+        </div>
+
+        <div class="flex flex-col w-full">
+          <!-- Nombre del usuario -->
+          <p class="capitalize font-medium group-hover:text-primary-dark underline-offset-4 group-hover:underline">Sirene oliveira</p>
+
+          <!-- Teléfono -->
+          <!-- <p class="text-gray-500 text-xs">93624521</p> -->
+        </div>
+
+        <lucide-icon [img]="ChevronRight" class="size-5 text-gray-600 row-span-2" />
+      </a>
     </div>
-  </section>
 
-</div>
+  </div>
+
+
+</section>

@@ -8,14 +8,14 @@
   <!-- Lista de Productos -->
   <div class="px-4 h-full flex flex-col pb-5">
 
-    <div class="divide-gray-300 divide-y py-5 h-full">
+    <div class="divide-gray-300 divide-y pt-3 pb-5 h-full">
 
       @for (product of products; track $index) {
-      <div class="flex py-2 items-center gap-x-3 row-span-1 sm:row-span-2 md:row-span-1">
+      <div class="flex py-3 items-center gap-x-3 row-span-1 sm:row-span-2 md:row-span-1">
 
         <!-- Imagen -->
-        <div class="min-h-14 min-w-14 max-w-14 max-h-14 bg-gray-200 border border-gray-300 rounded-lg contain-content">
-          <img [src]="product.image" alt="" class="h-14 object-cover" />
+        <div class="min-h-16 min-w-16 max-w-16 max-h-16 bg-gray-200 border border-gray-300 rounded-lg contain-content">
+          <img [src]="product.image" alt="" class="h-16 object-cover" />
         </div>
 
         <!-- Nombre / Disponibilidad / Categoría / Precio / Descuento -->
@@ -23,7 +23,7 @@
           <div class="flex items-center gap-x-2">
             <!-- Nombre -->
             <a routerLink="/dashboard/productos/{{product.id}}"
-              class="line-clamp-1 font-semibold text-sm hover:underline underline-offset-4 hover:text-primary">
+              class="line-clamp-1 font-medium text-sm hover:underline underline-offset-4 hover:text-primary">
               ({{ product.quantity }}) {{ product.name }}
             </a>
 
@@ -42,10 +42,10 @@
 
             <!-- Oferta / Promoción -->
             @if (product.offer) {
-              <component-shared-states state="En Oferta" />
+            <component-shared-states state="En Oferta" />
             }
             @if (product.promotion) {
-              <component-shared-states state="En Promocion" />
+            <component-shared-states state="En Promocion" />
             }
           </div>
         </div>
@@ -54,10 +54,11 @@
       }
 
       @for (promotion of promotions; track $index) {
-      <section class="rounded-lg border border-amber-600 mt-3 contain-content">
+      <section class="rounded-lg border border-amber-600 mt-5 contain-content">
 
-        <div class="flex items-center justify-between border-b border-b-amber-600 py-2 px-4 text-sm">
-          <a routerLink="" class="hover:underline underline-offset-4 font-medium text-amber-600 ">{{ promotion.name }}</a>
+        <div class="flex items-center justify-between border-b border-b-amber-600 py-3 px-4 text-sm">
+          <a routerLink="" class="hover:underline underline-offset-4 font-medium text-amber-600 ">{{ promotion.name
+            }}</a>
           <p>{{ promotion.price | currency:'S/. ' }}</p>
         </div>
 
@@ -78,7 +79,7 @@
               <div class="flex items-center gap-x-2">
                 <!-- Nombre -->
                 <a routerLink="/dashboard/productos/{{product.id}}"
-                  class="line-clamp-1 font-semibold text-sm hover:underline underline-offset-4 hover:text-primary">
+                  class="line-clamp-1 font-medium text-sm hover:underline underline-offset-4 hover:text-primary">
                   ({{ product.quantity }}) {{ product.name }}
                 </a>
 
@@ -102,9 +103,9 @@
     </div>
 
     <!-- Precios -->
-    <div class="space-y-3">
+    <div class="space-y-5">
 
-      <div class="border-y border-gray-300 py-3 space-y-1">
+      <div class="border-y border-gray-300 py-4 space-y-1">
 
         <!-- Costo por Productos -->
         <div class="flex text-gray-500 text-sm items-center justify-between gap-x-3">
@@ -126,7 +127,7 @@
 
         <!-- Descuentos -->
         <div class="flex text-gray-500 text-sm items-center justify-between gap-x-3">
-          <p>Descuentos:</p>
+          <p>Descuento directo:</p>
           <p>{{ 0 | currency:'S/. ' }}</p>
         </div>
 

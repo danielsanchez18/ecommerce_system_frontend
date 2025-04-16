@@ -18,18 +18,26 @@
   </div>
 
   <!-- Contenido -->
-  <div class="grid lg:grid-cols-2 gap-5 h-full">
-
-    <!-- Información del Pedido -->
-    <component-orders-info />
+  <div class="grid xl:grid-cols-[1fr_auto] gap-5 h-full">
 
     <!-- Lista de Productos -->
-    <component-orders-products-list />
+    <div class="overflow-y-auto gap-5 grid grid-rows-[1fr_auto] order-2 xl:order-1">
+      <component-orders-products-list />
+      <component-orders-comments />
+    </div>
+
+    <!-- Información del Pedido -->
+    <div class="relative order-1 xl:order-2">
+      <div class="sticky -top-5">
+        <component-orders-info />
+      </div>
+    </div>
 
   </div>
 
+
   <!-- Toast Component (Editar / Eliminar / Exportar) -->
-  <div class="sticky bottomm-0 -bottom-5 sm:-bottom-3 left-1/2 transform z-50 mt-5 w-full flex justify-center">
+  <div class="sticky -bottom-5 sm:-bottom-3 left-1/2 transform z-50 mt-5 w-full flex justify-center">
     <component-shared-toast [orders]=true />
   </div>
 
