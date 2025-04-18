@@ -21,6 +21,29 @@
 
 }
 
+<!-- Editar -->
+
+@if (edit) {
+
+  <div class="p-1.5 bg-gray-950 font-medium rounded-full grid grid-cols-[1fr_auto_auto] items-center gap-x-2 text-xs sm:text-sm">
+
+    <div class="flex items-center gap-x-2 px-2 sm:px-4 text-white">
+      <lucide-icon [img]="Info" class="size-5" />
+      <p>Cambios sin guardar</p>
+    </div>
+
+    <a routerLink=".." class="text-red-400 mx-2 sm:mx-4 hover:underline underline-offset-4">
+      Cancelar
+    </a>
+
+    <button class="bg-primary px-3 py-2 rounded-full text-white ml-2 sm:ml-4 hover:bg-primary-dark">
+      Guardar
+    </button>
+
+  </div>
+
+}
+
 
 <!-- Pedidos -->
 

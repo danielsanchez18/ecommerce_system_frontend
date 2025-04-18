@@ -2,22 +2,24 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ComponentSharedStates } from '@components/shared/states/states.component';
-import { CircleCheck, CircleMinus, LucideAngularModule, Tag } from 'lucide-angular';
+import { CircleCheck, CircleMinus, LucideAngularModule, Tag, CirclePlus, Trash2 } from 'lucide-angular';
 
 @Component({
-  selector: 'component-orders-products-list',
+  selector: 'component-orders-edit-products-list',
   imports: [
     RouterLink, CommonModule,
     LucideAngularModule,
     ComponentSharedStates,
   ],
-  templateUrl: './products-list.component.html',
+  templateUrl: './edit-products-list.component.html',
 })
-export class ComponentOrdersProductsList {
+export class ComponentOrdersEditProductsList {
 
   readonly Tag = Tag;
   readonly CircleCheck = CircleCheck;
   readonly CircleMinus = CircleMinus;
+  readonly CirclePlus = CirclePlus;
+  readonly Trash2 = Trash2;
 
   products = [
     {
@@ -40,7 +42,7 @@ export class ComponentOrdersProductsList {
       enabled: false,
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY7RbPLpeQGEKr-JMLB6L9kRdCTMtUbFJfJw&s',
       orders: 85,
-      promotion: false,
+      promotion: true,
       offer: false,
       quantity: 4
     },
@@ -51,7 +53,7 @@ export class ComponentOrdersProductsList {
       price: 55,
       enabled: true,
       image: 'https://saborusachile.cl/wp-content/uploads/2022/08/ensalada-cesar.jpg',
-      promotion: false,
+      promotion: true,
       offer: false,
       quantity: 2
     }

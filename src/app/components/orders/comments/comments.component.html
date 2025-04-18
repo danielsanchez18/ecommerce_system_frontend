@@ -1,17 +1,60 @@
 <section class="w-full bg-white rounded-xl border border-gray-300 h-full flex flex-col contain-content">
 
-
   <!-- Título -->
   <div class="px-4 py-3 border-b border-gray-300">
     <h3 class="font-medium text-sm">Comentarios</h3>
   </div>
 
-  <!-- Comentarios Vacío-->
-  <div class="px-4 h-full flex flex-col items-center justify-center py-5 text-sm text-stone-500 gap-y-1">
+  <!-- Contenido -->
+  <div class="px-4 h-full py-5 space-y-5 gap-y-1">
 
-    <lucide-icon [img]=HardDrive class="size-8 stroke-[1.5]" />
-    <p>No hay comentarios para mostrar</p>
+    <!-- Comentarios Vacío-->
+    <!-- <div class="text-stone-500 min-h-32 text-sm flex flex-col items-center justify-center space-y-2">
+      <lucide-icon [img]=Info class="size-8 stroke-[1.5] " />
+      <p>No hay comentarios para mostrar</p>
+    </div> -->
+
+    <!-- Comentario individual -->
+    <div class="space-y-5 min-h-32 pb-10">
+
+      @for (comentario of comentarios; track $index) {
+      <div class="flex gap-3 items-start">
+        <!-- Avatar -->
+        <img [src]=comentario.foto class="size-8 hidden sm:block rounded-full object-cover border border-gray-300" />
+
+        <!-- Contenido del mensaje -->
+        <div class="flex-1 space-y-1">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-x-2 text-sm">
+              <span class="font-semibold text-gray-800">{{ comentario.nombre }}</span>
+              <span class="text-gray-500 text-xs">({{ comentario.rol }})</span>
+            </div>
+            <span class="text-gray-400 text-xs">{{ comentario.fecha | date:'short' }}</span>
+          </div>
+          <p class="text-sm text-gray-700 bg-gray-100 p-2 rounded-xl w-fit max-w-[80%]">
+            {{ comentario.mensaje }}
+          </p>
+        </div>
+      </div>
+      }
+    </div>
+
+
+    <!-- Escribir comentarios -->
+    <div class="w-full space-y-1">
+      <textarea
+        name="comment"
+        maxlength="256"
+        [(ngModel)]="nuevoComentario"
+        placeholder="Escriba un comentario..."
+        class="border rounded-lg border-gray-300 text-sm w-full py-2 px-4 focus:outline-primary resize-none"
+      ></textarea>
+
+      <button (click)="agregarComentario()" class="text-xs text-white bg-primary font-medium px-3 py-2 rounded-lg flex items-center gap-x-2 hover:bg-primary-dark">
+        <lucide-icon [img]=Send class="size-4" />
+        Enviar comentario
+      </button>
+    </div>
 
   </div>
-
 </section>

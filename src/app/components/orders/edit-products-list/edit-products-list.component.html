@@ -1,0 +1,198 @@
+<section class="w-full bg-white rounded-xl sm:border border-gray-300 h-full flex flex-col contain-content">
+
+  <!-- Título -->
+  <div class="sm:px-4 py-3 sm:border-b border-gray-300 grid grid-cols-[1fr_auto] items-center gap-x-3">
+
+    <h3 class="font-medium text-sm">Lista de Productos</h3>
+
+    <button type="button"
+      class="flex px-2 py-1.5 hover:bg-gray-50 items-center gap-x-2 rounded-lg border border-primary text-primary">
+      <lucide-icon [img]=CirclePlus class="size-4" />
+      <span class="text-[0.8rem] font-medium">Añadir producto</span>
+    </button>
+  </div>
+
+  <!-- Lista de Productos -->
+  <div class="sm:px-4 h-full flex flex-col pb-5">
+
+    <div class="divide-gray-300 divide-y pt-3 pb-5 h-full">
+
+      @for (product of products; track $index) {
+      <div class="flex py-3 items-center gap-x-3 row-span-1 sm:row-span-2 md:row-span-1">
+
+        <!-- Imagen -->
+        <div class="min-h-16 min-w-16 max-w-16 max-h-16 bg-gray-200 border border-gray-300 rounded-lg contain-content">
+          <img [src]="product.image" alt="" class="h-16 object-cover" />
+        </div>
+
+        <!-- Nombre / Disponibilidad / Categoría / Precio / Descuento -->
+        <div class="space-y-1 w-full">
+          <div class="flex items-center gap-x-2">
+            <!-- Nombre -->
+            <a routerLink="/dashboard/productos/{{product.id}}"
+              class="line-clamp-1 font-medium text-sm hover:underline underline-offset-4 hover:text-primary">
+              {{ product.name }}
+            </a>
+
+            <!-- Disponibilidad -->
+            @if (product.enabled) {
+            <lucide-icon [img]=CircleCheck class="text-green-600 justify-self-center size-4 stroke-[1.5]" />
+            }
+            @else {
+            <lucide-icon [img]=CircleMinus class="text-gray-700 justify-self-center size-4 stroke-[1.5]" />
+            }
+
+            <div class="hidden sm:block">
+              <!-- Oferta / Promoción -->
+              @if (product.offer) {
+              <component-shared-states state="En Oferta" />
+              }
+              @if (product.promotion) {
+              <component-shared-states state="En Promocion" />
+              }
+            </div>
+          </div>
+
+          <div class="w-full flex items-center gap-x-2">
+            <!-- Precio -->
+            <p class="text-gray-500 text-sm md:w-20 text-nowrap">{{ product.price | currency:'S/. ' }}</p>
+
+            <div class="block sm:hidden w-full">
+              <!-- Oferta / Promoción -->
+              @if (product.offer) {
+              <component-shared-states state="En Oferta" />
+              }
+              @if (product.promotion) {
+              <component-shared-states state="En Promocion" />
+              }
+            </div>
+
+            <!-- Select Cantidad -->
+            <select data-hs-select='{
+              "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
+              "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-1.5 ps-3 pe-8 flex gap-x-2 text-nowrap cursor-pointer bg-white w-16 border border-gray-200 rounded-lg text-start text-sm focus:outline-hidden focus:ring-2 focus:ring-primary",
+              "dropdownClasses": "z-50 w-full max-h-60 p-1 bg-white border border-gray-200 rounded-lg overflow-hidden overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300",
+              "optionClasses": "py-1.5 px-3 w-full text-sm cursor-pointer hover:bg-gray-100 rounded-lg focus:outline-hidden focus:bg-gray-100 hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50",
+              "extraMarkup": "<button class=\"absolute top-1/2 end-3 -translate-y-1/2\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down-icon lucide-chevron-down shrink-0 size-3.5 text-gray-500\"><path d=\"m6 9 6 6 6-6\"/></svg></button>"
+            }' class="hidden" [value]="product.quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+            <!-- End Select Cantidad -->
+
+            <!-- Eliminar -->
+            <button type="button">
+              <lucide-icon [img]=Trash2 class="text-red-500 size-4" />
+            </button>
+          </div>
+        </div>
+
+      </div>
+      }
+
+      @for (promotion of promotions; track $index) {
+      <section class="rounded-lg border border-amber-600 mt-5 contain-content">
+
+        <div class="grid grid-cols-[1fr_auto_auto] items-center border-b border-b-amber-600 gap-x-3 py-3 px-4 text-sm">
+          <a routerLink="" class="hover:underline underline-offset-4 font-medium text-amber-600 ">{{ promotion.name
+            }}</a>
+          <p>{{ promotion.price | currency:'S/. ' }}</p>
+          <!-- Eliminar -->
+          <button type="button">
+            <lucide-icon [img]=Trash2 class="text-red-500 size-4" />
+          </button>
+        </div>
+
+        <!-- Iterar los productos de la promoción -->
+        <div class="px-4 divide-y divide-gray-300 py-2">
+
+          <div *ngFor="let product of promotion.products" class="py-2 flex items-center gap-x-3">
+
+            <!-- Imagen del producto -->
+            <div
+              class="min-h-14 min-w-14 max-w-14 max-h-14 bg-gray-200 border border-gray-300 rounded-lg contain-content">
+              <img [src]="product.image" alt="{{ product.name }}" class="h-14 object-cover" />
+            </div>
+
+            <!-- Detalles del producto -->
+            <div class="space-y-1">
+
+              <div class="flex items-center gap-x-2">
+                <!-- Nombre -->
+                <a routerLink="/dashboard/productos/{{product.id}}"
+                  class="line-clamp-1 font-medium text-sm hover:underline underline-offset-4 hover:text-primary">
+                  ({{ product.quantity }}) {{ product.name }}
+                </a>
+
+                <!-- Disponibilidad -->
+                @if (product.enabled) {
+                <lucide-icon [img]=CircleCheck class="text-green-600 justify-self-center size-4 stroke-[1.5]" />
+                }
+                @else {
+                <lucide-icon [img]=CircleMinus class="text-gray-700 justify-self-center size-4 stroke-[1.5]" />
+                }
+              </div>
+
+              <p class="text-gray-500 line-through text-sm">{{ product.price | currency:'S/. ' }}</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      }
+
+    </div>
+
+    <!-- Precios -->
+    <div class="space-y-5">
+
+      <div class="border-y border-gray-300 py-4 space-y-2">
+
+        <!-- Costo por Productos -->
+        <div class="flex text-sm items-center justify-between gap-x-3">
+          <p>Costo por productos:</p>
+          <p>{{ 173.30 | currency:'S/. ' }}</p>
+        </div>
+
+        <!-- Costo por Entrega -->
+        <div class="flex text-sm items-center justify-between gap-x-3">
+          <p>Costo por entrega:</p>
+          <p>{{ 0 | currency:'S/. ' }}</p>
+        </div>
+
+        <!-- Cupón de Descuento -->
+        <div class="flex  text-sm items-center justify-between gap-x-3">
+          <div class="flex items-center gap-x-2">
+            <p>Cupón:</p>
+            <input type="text" placeholder="COD DE CUPON" style="font-family: Inter;"
+            class="border border-gray-300 rounded-md px-3 py-1 text-sm w-36 focus:outline-primary" value="CUPON50">
+          </div>
+          <p class="text-primary">- {{ 50 | currency:'S/. ' }}</p>
+        </div>
+
+        <!-- Descuentos -->
+        <div class="flex text-sm items-center justify-between gap-x-3">
+          <p>Descuento directo:</p>
+          <p>{{ 0 | currency:'S/. ' }}</p>
+        </div>
+
+      </div>
+
+      <!-- Precio Total -->
+      <div class="flex font-medium items-center justify-between gap-x-3">
+        <p>Precio Total:</p>
+        <p class="">{{ 123 | currency:'S/. ' }}</p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
