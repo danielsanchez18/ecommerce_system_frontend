@@ -1,19 +1,26 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { LucideAngularModule, Search, UserRoundCog, ChevronDown } from 'lucide-angular';
+import { LucideAngularModule, Search, UserRoundCog, ChevronDown, UserRoundSearch } from 'lucide-angular';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'component-roles-users-search',
   imports: [
-    RouterLink,
-    LucideAngularModule
+    LucideAngularModule,
+    FormsModule, CommonModule
   ],
   templateUrl: './users-search.component.html',
 })
 export class ComponentRolesUsersSearch {
 
+  searchTerm: string = '';
+  filteredUsers: any[] = [];
+  selectedUsers: any[] = [];
+  removingUserIds: number[] = [];
+
   readonly Search = Search;
   readonly UserRoundCog = UserRoundCog;
+  readonly UserRoundSearch = UserRoundSearch;
   readonly ChevronDown = ChevronDown;
 
   users = [
@@ -78,5 +85,47 @@ export class ComponentRolesUsersSearch {
       image: 'https://i.pravatar.cc/150?img=10',
     },
   ];
+
+
+  onSearchChange() {
+    const term = this.searchTerm.toLowerCase();
+    this.filteredUsers = this.users.filter(user =>
+      user.name.toLowerCase().includes(term) &&
+      !this.selectedUsers.some(selected => selected.id === user.id)
+    );
+  }
+
+  selectUser(user: any) {
+    this.selectedUsers.push(user);
+    this.searchTerm = '';
+    this.filteredUsers = [];
+  }
+
+  // removeUser(userId: number) {
+  //   this.selectedUsers = this.selectedUsers.filter(user => user.id !== userId);
+  // }
+
+  removeUser(userId: number) {
+    this.removingUserIds.push(userId);
+
+    setTimeout(() => {
+      this.selectedUsers = this.selectedUsers.filter(user => user.id !== userId);
+      this.removingUserIds = this.removingUserIds.filter(id => id !== userId);
+    }, 200); // tiempo igual a la duración de tu animación
+  }
+
+
+  assignUsers() {
+    if (this.selectedUsers.length === 0) return;
+
+    // Podés agregar lógica de envío real si querés luego
+    console.log('Usuarios asignados:', this.selectedUsers);
+
+    // Simular asignación: limpiar lista
+    this.selectedUsers = [];
+    this.searchTerm = '';
+    this.filteredUsers = [];
+  }
+
 
 }

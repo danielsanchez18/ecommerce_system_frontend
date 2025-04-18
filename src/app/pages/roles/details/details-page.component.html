@@ -2,19 +2,31 @@
 <section class="w-full flex flex-col gap-y-7">
 
   <!-- Título -->
-  <div class="">
+  <div class="grid grid-cols-[1fr_auto] items-center gap-x-3">
     <a routerLink=".." class="text-primary text-sm hover:underline underline-offset-4 font-semibold">Regresar</a>
-    <p class="text-lg font-medium">Administrador</p>
+
+    <button
+      class="bg-primary row-span-2 text-white flex items-center gap-x-2 rounded-full px-3 py-3 w-fit hover:bg-primary-dark transition-colors duration-300"
+      aria-haspopup="dialog" aria-expanded="false" aria-controls="modal-asignar-usuario" data-hs-overlay="#modal-asignar-usuario"
+    >
+
+      <p class="text-sm font-medium leading-none">Asignar</p>
+    </button>
+
+    <p class="text-lg font-medium">Camarero Avanzado (12)</p>
   </div>
 
   <!-- Contenido -->
-  <div class="grid xl:grid-cols-2 gap-5 size-full">
+  <div class="grid xl:grid-colas-2 gap-5 size-full">
 
     <!-- Lista de Usuarios -->
     <component-roles-users-list />
 
     <!-- Asignar Usuarios -->
-    <component-roles-users-search />
+
+    <div id="modal-asignar-usuario" class="hs-overlay hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="hs-scale-animation-modal-label">
+      <component-roles-users-search />
+    </div>
 
   </div>
 

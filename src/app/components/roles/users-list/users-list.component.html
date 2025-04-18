@@ -1,24 +1,19 @@
-<section class="h-full border border-gray-300 bg-white rounded-xl flex flex-col">
-
-  <!-- Título -->
-  <div class="px-4 sm:px-5 py-3 border-b border-b-gray-300">
-    <h3 class="font-medium text-sm">Lista de usuarios</h3>
-  </div>
+<section class="h-full sm:border border-gray-300 bg-white rounded-xl flex flex-col">
 
   <!-- Contenido -->
-  <div class="px-4 py-5 sm:px-5 space-y-5 h-full flex flex-col">
+  <div class="sm:py-5 sm:px-5 space-y-5 h-full flex flex-col">
 
     <!-- Buscador -->
     <div class="relative">
       <input type="text" placeholder="Buscar usuarios asignados"
-        class="w-full text-sm px-4 py-2 border border-gray-300 pl-11 focus:outline-green-600 rounded-md">
+        class="w-full max-sm:text-sm px-4 py-2 border border-gray-300 pl-11 focus:outline-green-600 rounded-md">
       <lucide-icon [img]="Search" class="size-4 stroke-[1.5] absolute text-gray-500 top-0 py-2 start-2 h-full" />
     </div>
 
     <!-- Lista de usuarios -->
     <div class="divide-y divide-gray-200 h-full">
       @for (user of users; track $index) {
-        <div class="flex items-center">
+        <div class="grid grid-cols-[1fr_auto] items-center">
           <a routerLink="/dashboard/usuarios/4"
             class="group py-3 grid grid-cols-[auto_1fr] w-full items-center gap-x-3">
 
@@ -32,13 +27,29 @@
 
             <!-- Informacion -->
             <div>
-              <p class="text-sm font-medium underline-offset-4 group-hover:underline group-hover:text-primary">{{ user.name }}</p>
+              <div class="flex items-center gap-x-2">
+                <!-- Nombre -->
+                <a routerLink="/dashboard/usuarios/{{user.id}}" class="line-clamp-1 font-semibold text-sm hover:underline underline-offset-4 hover:text-primary">
+                  {{ user.name }}
+                </a>
+
+                <!-- Disponibilidad -->
+                @if (user.enabled) {
+                  <lucide-icon [img]=CircleCheck class="text-green-600 justify-self-center size-4 stroke-[1.5]"/>
+                }
+                @else {
+                  <lucide-icon [img]=CircleMinus class="text-gray-700 justify-self-center size-4 stroke-[1.5]"/>
+                }
+              </div>
+
               <p class="text-sm text-gray-500">Asignado el {{ user.createdAt }}</p>
             </div>
           </a>
+
           <!-- Quitar Rol -->
-          <button class="text-xs px-2 py-1.5 border border-red-700 rounded-lg text-red-700 text-nowrap font-medium hover:bg-red-700 hover:text-white transition-colors duration-300">
-            Quitar
+          <button class="flex sm:rounded-lg sm:px-2 sm:py-2 items-center gap-x-2 text-sm font-medium text-red-600 hover:text-red-700">
+            <lucide-icon [img]="CircleMinus" class="size-5 stroke-[1.5]" />
+            <p class="hidden sm:block">Remover</p>
           </button>
         </div>
       }
@@ -46,18 +57,17 @@
 
     <!-- Paginación -->
     <div class="flex items-center justify-between">
-      <!-- Resultados -->
-      <p class="text-sm">10 de 136 resultados</p>
 
-      <!-- Páginas -->
-      <div class="flex items-center gap-x-0.5">
-        <button class="paginator-active">1</button>
-        <button class="paginator-inactive">2</button>
-        <button class="paginator-inactive hidden sm:block">3</button>
-        <button class="paginator-inactive">
-          <lucide-icon [img]="ChevronRight" class="justify-self-center size-5" />
-        </button>
-      </div>
+      <button class="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-500 flex items-center gap-x-1">
+        <lucide-icon [img]="ChevronLeft" class="size-4" />
+        Anterior
+      </button>
+
+      <button class="border border-gray-200 rounded-lg px-3 py-2 text-sm text-gray-500 flex items-center gap-x-1">
+        Siguiente
+        <lucide-icon [img]="ChevronRight" class="size-4" />
+      </button>
+
     </div>
 
   </div>
