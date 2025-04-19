@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Comentario } from '@interfaces/Comments';
+import { Comentario } from '@interfaces/comments';
 import { Info, LucideAngularModule, Send } from 'lucide-angular';
 
 @Component({
