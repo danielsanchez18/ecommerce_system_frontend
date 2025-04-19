@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ComponentSharedSidebarResponsive } from '@components/shared/sidebar-responsive/sidebar-responsive.component';
 import { ComponentSharedSidebarLinks } from '@components/shared/sidebar-links/sidebar-links.component';
-import { Bell, LucideAngularModule, Search, PanelLeftOpen, ChevronRight, MessageCircle } from 'lucide-angular';
+import { Bell, LucideAngularModule, Search, PanelLeftOpen, ChevronRight, MessageCircle, Menu } from 'lucide-angular';
 
 @Component({
   selector: 'layout-dashboard',
@@ -22,5 +22,6 @@ export class LayoutDashboard {
   readonly PanelLeftOpen = PanelLeftOpen;
   readonly ChevronRight = ChevronRight;
   readonly MessageCircle = MessageCircle;
+  readonly Menu = Menu;
 
 }

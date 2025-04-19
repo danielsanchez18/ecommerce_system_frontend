@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ComponentSharedSidebarLinks } from '../sidebar-links/sidebar-links.component';
-import { LucideAngularModule, PanelLeftClose } from 'lucide-angular';
+import { LucideAngularModule, PanelLeftClose, X, XCircle } from 'lucide-angular';
 
 @Component({
   selector: 'component-shared-sidebar-responsive',
@@ -13,5 +13,7 @@ import { LucideAngularModule, PanelLeftClose } from 'lucide-angular';
 export class ComponentSharedSidebarResponsive {
 
   readonly PanelLeftClose = PanelLeftClose;
+  readonly XCircle = XCircle;
+  readonly X = X;
 
 }
